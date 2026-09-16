@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05060f" />
+  <meta name="description" content="Entregas do Projeto Bilu — materiais produzidos pelo grupo para a disciplina." />
+  <title>Entregas — Projeto Bilu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <!-- Reusa a folha compartilhada do Site_Bilu (resolve para /styles.css) -->
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <!-- Céu estrelado (opcional, consistência de tema; preenchido via JS, com fallback CSS) -->
+  <div class="starfield" id="starfield" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="/" aria-label="Bilu — página inicial">
+        <span class="brand-mark" aria-hidden="true">👽</span>
+        <span class="brand-name">Bilu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Início</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="section" id="entregas">
+      <p class="section-label">ENTREGAS</p>
+      <h1 class="section-title">Entregas do grupo</h1>
+      <p class="lead">
+        Materiais produzidos pelos integrantes do grupo para a disciplina
+        <strong>ACH2027 - Gestão de Projetos de Tecnologia da Informação</strong>, ministrada pela professora Violeta Sun.
+      </p>
+
+      <!-- Lista de Entregaveis — títulos-link numerados + descrição curta -->
+      <ul class="entregas-list">
+        <li class="entrega-item">
+          <a href="/entregas/teste">1. Teste</a>
+          <p>isto é um teste</p>
+        </li>
+        <!-- Para adicionar um entregável: copiar um <li class="entrega-item">,
+             ajustar o número/título, o href (/entregas/<slug>) e a descrição,
+             e criar public/entregas/<slug>/index.html. -->
+      </ul>
+
+      <div class="hero-actions">
+        <a class="btn btn-ghost" href="/">Voltar para a página inicial</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="brand-mark" aria-hidden="true">👽</span>
+      <p class="footer-quote">“Busquem conhecimento.”</p>
+      <p class="footer-meta">Projeto Bilu · Astronomia e astronáutica para a OBA</p>
+    </div>
+  </footer>
+
+  <!-- Opcional: reaproveita o céu estrelado da home -->
+  <script src="../script.js" defer></script>
+</body>
+</html>

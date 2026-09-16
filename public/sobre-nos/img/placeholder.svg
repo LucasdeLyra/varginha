@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="Foto indisponível">
+  <!-- Placeholder neutro compatível com o tema espacial do Projeto Bilu.
+       Dimensões nominais 160x160, tons neutros (fundo escuro + traços claros translúcidos),
+       sem cores de destaque fora da paleta neutra do tema. -->
+  <rect width="160" height="160" fill="#111634"/>
+  <rect x="0.5" y="0.5" width="159" height="159" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+  <g fill="none" stroke="rgba(230,233,245,0.35)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="80" cy="64" r="24"/>
+    <path d="M40 124c0-22 18-36 40-36s40 14 40 36"/>
+  </g>
+</svg>

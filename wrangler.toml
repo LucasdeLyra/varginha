@@ -1,0 +1,11 @@
+# Configuração do Cloudflare Workers com Static Assets para o projeto Bilu.
+# Deploy:  npx wrangler deploy
+# Preview: npx wrangler dev
+name = "bilu"
+compatibility_date = "2025-09-16"
+
+# Serve os arquivos estáticos da pasta ./public como um site.
+[assets]
+directory = "./public"
+# Sem Worker script: apenas static assets (SPA/landing estática).
+not_found_handling = "single-page-application"

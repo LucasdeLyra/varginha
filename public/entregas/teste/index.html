@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05060f" />
+  <meta name="description" content="Teste — entregável do Projeto Bilu (conteúdo de placeholder)." />
+  <title>Teste — Projeto Bilu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <!-- Dois níveis de profundidade: resolve para /styles.css -->
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <!-- Céu estrelado (opcional, consistência de tema; preenchido via JS, com fallback CSS) -->
+  <div class="starfield" id="starfield" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="/" aria-label="Bilu — página inicial">
+        <span class="brand-mark" aria-hidden="true">👽</span>
+        <span class="brand-name">Bilu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Início</a></li>
+        <li><a href="/entregas">Entregas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="section" id="entregavel">
+      <p class="section-label">ENTREGA</p>
+      <h1 class="section-title">Teste</h1>
+      <p class="lead">isto é um teste</p>
+
+      <!-- Área de conteúdo do entregável -->
+      <div class="entrega-conteudo">
+        <p>[CONTEÚDO DO ENTREGÁVEL — a substituir]</p>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-ghost" href="/entregas">Voltar para as entregas</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="brand-mark" aria-hidden="true">👽</span>
+      <p class="footer-quote">“Busquem conhecimento.”</p>
+      <p class="footer-meta">Projeto Bilu · Astronomia e astronáutica para a OBA</p>
+    </div>
+  </footer>
+
+  <!-- Opcional: reaproveita o céu estrelado da home (dois níveis) -->
+  <script src="../../script.js" defer></script>
+</body>
+</html>

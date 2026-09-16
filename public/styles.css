@@ -1,0 +1,393 @@
+/* =========================================================
+   Bilu — tema de espaço sideral
+   ========================================================= */
+
+:root {
+  --space-950: #05060f;
+  --space-900: #0a0d1f;
+  --space-800: #111634;
+  --space-700: #1b2154;
+  --nebula-1: #7c3aed;   /* roxo nebulosa */
+  --nebula-2: #2563eb;   /* azul cósmico */
+  --nebula-3: #22d3ee;   /* ciano estelar */
+  --star: #f8fafc;
+  --text: #e6e9f5;
+  --text-dim: #a6adcb;
+  --line: rgba(255, 255, 255, 0.10);
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --radius: 18px;
+  --maxw: 1080px;
+  --font: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  /* Compensa o cabeçalho fixo (position: sticky) ao pular para âncoras,
+     para que o título da seção alvo fique visível sem rolagem adicional. */
+  scroll-padding-top: 80px;
+}
+
+/* Reforço por-elemento: garante o mesmo recuo mesmo quando o alvo é uma
+   section/hero específica (fallback para navegadores com suporte parcial). */
+:target,
+.section[id],
+.hero[id] {
+  scroll-margin-top: 80px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  line-height: 1.6;
+  background:
+    radial-gradient(1200px 800px at 15% -10%, rgba(124, 58, 237, 0.35), transparent 60%),
+    radial-gradient(1000px 700px at 90% 0%, rgba(37, 99, 235, 0.30), transparent 55%),
+    radial-gradient(900px 900px at 50% 120%, rgba(34, 211, 238, 0.15), transparent 60%),
+    var(--space-950);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ---------- Céu estrelado ---------- */
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  /* fallback caso o JS não rode: estrelas estáticas via gradientes */
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, #fff, transparent),
+    radial-gradient(1px 1px at 60% 70%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 80% 20%, #cbd5ff, transparent),
+    radial-gradient(1px 1px at 40% 80%, #fff, transparent),
+    radial-gradient(1px 1px at 90% 60%, #e0e7ff, transparent);
+  background-repeat: no-repeat;
+}
+
+.star {
+  position: absolute;
+  background: var(--star);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle var(--dur, 4s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.9); }
+  50%      { opacity: 1;    transform: scale(1.15); }
+}
+
+/* ---------- Utilitários ---------- */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--nebula-1);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 0 0 10px 0;
+  z-index: 100;
+}
+.skip-link:focus { left: 0; }
+
+a { color: inherit; }
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--nebula-3), var(--nebula-1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  background: rgba(5, 6, 15, 0.55);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+}
+.brand-mark { font-size: 1.4rem; }
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dim);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.nav-links a:hover,
+.nav-links a:focus-visible { color: var(--text); }
+
+/* ---------- Hero ---------- */
+.hero {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 96px 24px 64px;
+  text-align: center;
+}
+.eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.78rem;
+  color: var(--nebula-3);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin: 0 0 22px;
+}
+.hero-title {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.05;
+  margin: 0 0 20px;
+  font-weight: 800;
+}
+.hero-subtitle {
+  max-width: 620px;
+  margin: 0 auto 32px;
+  color: var(--text-dim);
+  font-size: 1.1rem;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hero-actions.centered { margin-top: 28px; }
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary {
+  background: linear-gradient(90deg, var(--nebula-1), var(--nebula-2));
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.35);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--line);
+}
+.btn-ghost:hover { background: rgba(255, 255, 255, 0.06); }
+
+/* ---------- Órbita decorativa ---------- */
+.orbit {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 56px auto 0;
+}
+.orbit-sun {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 54px;
+  height: 54px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff5c2, #ffb347 45%, #ff7a00);
+  box-shadow: 0 0 40px rgba(255, 170, 60, 0.6);
+}
+.orbit-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px dashed var(--line);
+  border-radius: 50%;
+  animation: spin 14s linear infinite;
+}
+.orbit-planet {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #a5f3fc, #22d3ee 55%, #0891b2);
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.7);
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- Sections ---------- */
+.section {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 72px 24px;
+  border-top: 1px solid var(--line);
+}
+.section-label {
+  color: var(--nebula-3);
+  letter-spacing: 3px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+.section-title {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  margin: 0 0 28px;
+  font-weight: 800;
+}
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 32px;
+}
+.lead {
+  font-size: 1.25rem;
+  color: var(--text);
+  margin: 0;
+}
+.lead.centered {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--text-dim);
+}
+.section-body p { color: var(--text-dim); margin: 0 0 16px; }
+.section-mission { text-align: center; }
+
+/* ---------- Cards ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124, 58, 237, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+}
+.card-icon { font-size: 2rem; margin-bottom: 12px; }
+.card-title { margin: 0 0 8px; font-size: 1.15rem; }
+.card p { color: var(--text-dim); margin: 0; }
+code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1px 6px;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 24px;
+  padding: 56px 24px;
+  text-align: center;
+}
+.footer-inner { max-width: 640px; margin: 0 auto; }
+.footer-quote {
+  font-size: 1.25rem;
+  font-style: italic;
+  margin: 14px 0 10px;
+}
+.footer-meta { color: var(--text-dim); font-size: 0.9rem; margin: 0; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+  .section-grid { grid-template-columns: 1fr; }
+  .hero { padding-top: 64px; }
+}
+
+/* ---------- Acessibilidade: movimento reduzido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .star, .orbit-ring { animation: none !important; }
+  .btn:hover, .card:hover { transform: none; }
+}
+
+/* ---------- Lista de entregáveis ---------- */
+.entregas-list {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+}
+.entrega-item > a {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.entrega-item > a:hover,
+.entrega-item > a:focus-visible { color: var(--nebula-3); }
+.entrega-item > p {
+  color: var(--text-dim);
+  margin: 4px 0 0;
+}
+/* Área de conteúdo da sub-página do entregável */
+.entrega-conteudo { margin: 8px 0 28px; }
+
+/* ---------- Integrantes (Sobre nós) ---------- */
+.membros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.membro-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+.membro-foto {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+.membro-nome {
+  margin: 0;
+  color: var(--text);
+}

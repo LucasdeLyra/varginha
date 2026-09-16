@@ -1,0 +1,12 @@
+# Cabeçalhos aplicados pelo Cloudflare Pages (e compatível com Workers Assets).
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# Cache longo para assets estáticos versionáveis
+/styles.css
+  Cache-Control: public, max-age=3600
+/script.js
+  Cache-Control: public, max-age=3600

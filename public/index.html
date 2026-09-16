@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05060f" />
+  <meta name="description" content="Bilu — repositório educacional de astronomia e astronáutica para preparação autônoma para a OBA (Olimpíada Brasileira de Astronomia e Astronáutica)." />
+  <title>Bilu — Busquem conhecimento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Céu estrelado (preenchido via JS, com fallback CSS) -->
+  <div class="starfield" id="starfield" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="#topo" aria-label="Bilu — página inicial">
+        <span class="brand-mark" aria-hidden="true">👽</span>
+        <span class="brand-name">Bilu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#oba">A OBA</a></li>
+        <li><a href="#recursos">O que você encontra</a></li>
+        <li><a href="#missao">Para educadores</a></li>
+        <li><a href="#como-foi-feito">Como foi feito?</a></li>
+        <li><a href="/sobre-nos">Sobre nós</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero" id="topo">
+      <div class="hero-inner">
+        <p class="eyebrow">Astronomia e astronáutica para todos</p>
+        <h1 class="hero-title">
+          Bilu diz: <span class="gradient-text">busquem conhecimento.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Bilu é um repositório educacional de astronomia e astronáutica pensado
+          para ajudar estudantes do ensino básico a se prepararem, de forma
+          autônoma e divertida, para a Olimpíada Brasileira de Astronomia e
+          Astronáutica (OBA).
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#sobre">Começar a estudar</a>
+          <a class="btn btn-ghost" href="#oba">O que é a OBA?</a>
+        </div>
+
+        <div class="orbit" aria-hidden="true">
+          <div class="orbit-sun"></div>
+          <div class="orbit-ring">
+            <div class="orbit-planet"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section" id="sobre">
+      <p class="section-label">SOBRE O PROJETO</p>
+      <h2 class="section-title">O que é o Bilu?</h2>
+      <div class="section-grid">
+        <p class="lead">
+          Um ambiente digital para aprender sobre o universo e se preparar para a
+          OBA — no seu ritmo, com curiosidade e sem barreiras.
+        </p>
+        <div class="section-body">
+          <p>
+            O Bilu reúne, em um só lugar, conteúdos de astronomia e astronáutica
+            organizados para o público infantojuvenil. A proposta é democratizar o
+            acesso ao conhecimento científico e incentivar o pensamento científico
+            desde cedo.
+          </p>
+          <p>
+            O nome é uma homenagem ao célebre "ET Bilu" e ao seu bordão
+            <strong>"Busquem conhecimento"</strong> — curto, convidativo e fácil de
+            lembrar, ele aproxima crianças e jovens do saber acadêmico com um toque
+            lúdico e espacial.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- A OBA -->
+    <section class="section" id="oba">
+      <p class="section-label">A OLIMPÍADA</p>
+      <h2 class="section-title">Por que se preparar para a OBA?</h2>
+      <div class="section-grid">
+        <p class="lead">
+          A OBA é uma das maiores iniciativas de estímulo ao pensamento científico
+          entre crianças e jovens no Brasil.
+        </p>
+        <div class="section-body">
+          <p>
+            Participar da Olimpíada Brasileira de Astronomia e Astronáutica
+            desperta a curiosidade científica, aproxima estudantes do universo e
+            valoriza o esforço de quem estuda.
+          </p>
+          <p>
+            Ela também é uma via de ingresso em grandes universidades: instituições
+            como a Unicamp reservam vagas a medalhistas. Isso reforça o valor de uma
+            preparação autônoma e bem orientada — exatamente o que o Bilu oferece.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECURSOS -->
+    <section class="section" id="recursos">
+      <p class="section-label">O QUE VOCÊ ENCONTRA</p>
+      <h2 class="section-title">Aprender sobre o cosmos, do seu jeito</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🌍</div>
+          <h3 class="card-title">Astronomia</h3>
+          <p>Estrelas, planetas, galáxias e os fenômenos do céu explicados de forma clara e acessível.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🚀</div>
+          <h3 class="card-title">Astronáutica</h3>
+          <p>Foguetes, satélites e a exploração espacial: como a humanidade alcança as estrelas.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🏅</div>
+          <h3 class="card-title">Preparação para a OBA</h3>
+          <p>Conteúdos organizados para estudar de forma autônoma e chegar confiante na prova.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🔭</div>
+          <h3 class="card-title">Curiosidade científica</h3>
+          <p>Um convite a observar, perguntar e explorar — porque aprender sobre o universo é divertido.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PARA EDUCADORES -->
+    <section class="section section-mission" id="missao">
+      <p class="section-label">PARA EDUCADORES</p>
+      <h2 class="section-title">Um apoio para levar o universo à sala de aula.</h2>
+      <p class="lead centered">
+        Educadores encontram no Bilu um material de apoio para complementar suas
+        aulas e despertar o interesse dos estudantes pela ciência. Democratizar o
+        conhecimento é uma jornada — e ela começa com uma pergunta.
+      </p>
+      <div class="hero-actions centered">
+        <a class="btn btn-primary" href="#sobre">Explorar o conteúdo</a>
+      </div>
+    </section>
+
+    <!-- COMO FOI FEITO -->
+    <section class="section" id="como-foi-feito">
+      <p class="section-label">COMO FOI FEITO</p>
+      <h2 class="section-title">Como foi feito?</h2>
+      <div class="section-grid">
+        <p class="lead">
+          Este projeto foi desenvolvido pelos integrantes do grupo como entrega da
+          disciplina <strong>ACH2027 - Gestão de Projetos de Tecnologia da Informação</strong>, ministrada pela professora Violeta Sun.
+        </p>
+        <div class="section-body">
+          <p>
+            Abaixo você encontra o entregável completo produzido pelo grupo.
+          </p>
+          <!-- Configuração A (padrão): mesma origem, mesma aba, sem target/rel.
+               TODO (variante B, opcional): abrir em nova aba com
+               target="_blank" rel="noopener noreferrer" + nota "(abre em nova aba)". -->
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/entregas">Ver o entregável do grupo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="brand-mark" aria-hidden="true">👽</span>
+      <p class="footer-quote">“Busquem conhecimento.”</p>
+      <p class="footer-meta">Projeto Bilu · Astronomia e astronáutica para a OBA</p>
+    </div>
+  </footer>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>

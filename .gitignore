@@ -1,0 +1,12 @@
+# Dependências
+node_modules/
+
+# Artefatos de build/deploy
+.wrangler/tmp/
+
+# Logs
+npm-debug.log*
+
+.kiro/
+
+.wrangler/

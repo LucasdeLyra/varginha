@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05060f" />
+  <meta name="description" content="Sobre nós — conheça os integrantes do grupo do Projeto Bilu." />
+  <title>Sobre nós — Projeto Bilu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <!-- Reusa a folha compartilhada do Site_Bilu (resolve para /styles.css) -->
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <!-- Céu estrelado (preenchido via JS, com fallback CSS) -->
+  <div class="starfield" id="starfield" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="/" aria-label="Bilu — página inicial">
+        <span class="brand-mark" aria-hidden="true">👽</span>
+        <span class="brand-name">Bilu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Início</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="section" id="integrantes">
+      <p class="section-label">QUEM SOMOS</p>
+      <h1 class="section-title">Sobre nós</h1>
+      <ul class="membros">
+        <li class="membro">
+          <article class="card membro-card">
+            <img
+              class="membro-foto"
+              src="img/placeholder.svg"
+              alt="Foto de [Nome do Integrante 1]"
+              width="160" height="160"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='img/placeholder.svg';"
+            />
+            <h3 class="card-title membro-nome">Luan Pereira Pinheiro</h3>
+          </article>
+        </li>
+        <li class="membro">
+          <article class="card membro-card">
+            <img
+              class="membro-foto"
+              src="img/placeholder.svg"
+              alt="Foto de [Nome do Integrante 2]"
+              width="160" height="160"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='img/placeholder.svg';"
+            />
+            <h3 class="card-title membro-nome">Lucas de Lyra Monteiro</h3>
+          </article>
+        </li>
+        <li class="membro">
+          <article class="card membro-card">
+            <img
+              class="membro-foto"
+              src="img/placeholder.svg"
+              alt="Foto de [Nome do Integrante 3]"
+              width="160" height="160"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='img/placeholder.svg';"
+            />
+            <h3 class="card-title membro-nome">Luiz Henrique Fernandes Ramires</h3>
+          </article>
+        </li>
+        <li class="membro">
+          <article class="card membro-card">
+            <img
+              class="membro-foto"
+              src="img/placeholder.svg"
+              alt="Foto de [Nome do Integrante 4]"
+              width="160" height="160"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='img/placeholder.svg';"
+            />
+            <h3 class="card-title membro-nome">Sofia Pereira Leopoldo</h3>
+          </article>
+        </li>
+        <li class="membro">
+          <article class="card membro-card">
+            <img
+              class="membro-foto"
+              src="img/placeholder.svg"
+              alt="Foto de [Nome do Integrante 5]"
+              width="160" height="160"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='img/placeholder.svg';"
+            />
+            <h3 class="card-title membro-nome">Ygor Araujo da Silva</h3>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="brand-mark" aria-hidden="true">👽</span>
+      <p class="footer-quote">“Busquem conhecimento.”</p>
+      <p class="footer-meta">Projeto Bilu · Astronomia e astronáutica para a OBA</p>
+    </div>
+  </footer>
+
+  <!-- Opcional: reaproveita o céu estrelado da home -->
+  <script src="../script.js" defer></script>
+</body>
+</html>
