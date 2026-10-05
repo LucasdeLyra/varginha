@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#05060f" />
-  <meta name="description" content="Teste — entregável do Projeto Bilu (conteúdo de placeholder)." />
-  <title>Teste — Projeto Bilu</title>
+  <meta name="description" content="Objetivos SMART — entregável do Projeto Bilu. Documento em PDF." />
+  <title>Objetivos SMART — Projeto Bilu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <!-- Dois níveis de profundidade: resolve para /styles.css -->
   <link rel="stylesheet" href="../../styles.css" />
@@ -32,15 +32,32 @@
   <main id="conteudo">
     <section class="section" id="entregavel">
       <p class="section-label">ENTREGA</p>
-      <h1 class="section-title">Teste</h1>
-      <p class="lead">isto é um teste</p>
+      <h1 class="section-title">Objetivos SMART</h1>
+      <p class="lead">
+        Definição dos objetivos SMART do Projeto Bilu. Visualize o documento
+        abaixo ou faça o download em PDF.
+      </p>
 
-      <!-- Área de conteúdo do entregável -->
+      <!-- Área de conteúdo do entregável: visualizador de PDF -->
       <div class="entrega-conteudo">
-        <p>[CONTEÚDO DO ENTREGÁVEL — a substituir]</p>
+        <!-- O arquivo tem espaços no nome, então o caminho é codificado (%20). -->
+        <object
+          class="pdf-viewer"
+          data="Objetivos%20SMART.docx.pdf"
+          type="application/pdf"
+          aria-label="Objetivos SMART (PDF)"
+        >
+          <p>
+            Seu navegador não consegue exibir o PDF diretamente.
+            <a href="Objetivos%20SMART.docx.pdf" target="_blank" rel="noopener">
+              Abrir os Objetivos SMART em uma nova aba
+            </a>.
+          </p>
+        </object>
       </div>
 
       <div class="hero-actions">
+        <a class="btn btn-primary" href="Objetivos%20SMART.docx.pdf" target="_blank" rel="noopener">Abrir PDF em nova aba</a>
         <a class="btn btn-ghost" href="/entregas">Voltar para as entregas</a>
       </div>
     </section>

@@ -10,3 +10,9 @@
   Cache-Control: public, max-age=3600
 /script.js
   Cache-Control: public, max-age=3600
+
+# Documentos PDF de entregas: permitir exibição embutida na mesma origem
+# (o /* aplica X-Frame-Options: DENY, que bloquearia o <object> mesmo em same-origin).
+/entregas/*/*.pdf
+  X-Frame-Options: SAMEORIGIN
+  Cache-Control: public, max-age=3600
