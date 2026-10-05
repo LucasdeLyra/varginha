@@ -6,11 +6,12 @@ import { JSDOM } from "jsdom";
 describe("Navegação e Acesso à Página de Entregas (/entregas)", () => {
   const rootDir = path.resolve(__dirname, "..");
 
-  it("public/index.html deve conter link para /entregas na navbar e manter o rodapé limpo", () => {
-    const html = fs.readFileSync(path.join(rootDir, "public/index.html"), "utf-8");
-    const dom = new JSDOM(html);
-    const document = dom.window.document;
+  function loadDocument(relativeHtmlPath) {
+    const html = fs.readFileSync(path.join(rootDir, relativeHtmlPath), "utf-8");
+    return new JSDOM(html).window.document;
+  }
 
+  function assertNavAndCleanFooter(document) {
     // Link na navegação superior (navbar)
     const navLink = document.querySelector('.nav-links a[href="/entregas"]');
     expect(navLink).not.toBeNull();
@@ -19,24 +20,20 @@ describe("Navegação e Acesso à Página de Entregas (/entregas)", () => {
     // Rodapé limpo (sem links intrusivos de entregas)
     const footerLink = document.querySelector('.site-footer a[href="/entregas"]');
     expect(footerLink).toBeNull();
+  }
+
+  it("public/index.html deve conter link para /entregas na navbar e manter o rodapé limpo", () => {
+    const document = loadDocument("public/index.html");
+    assertNavAndCleanFooter(document);
   });
 
   it("public/sobre-nos/index.html deve conter link para /entregas na navbar e manter o rodapé limpo", () => {
-    const html = fs.readFileSync(path.join(rootDir, "public/sobre-nos/index.html"), "utf-8");
-    const dom = new JSDOM(html);
-    const document = dom.window.document;
-
-    const navLink = document.querySelector('.nav-links a[href="/entregas"]');
-    expect(navLink).not.toBeNull();
-
-    const footerLink = document.querySelector('.site-footer a[href="/entregas"]');
-    expect(footerLink).toBeNull();
+    const document = loadDocument("public/sobre-nos/index.html");
+    assertNavAndCleanFooter(document);
   });
 
   it("public/entregas/index.html deve separar visualmente atividade proposta e entregas para outros grupos", () => {
-    const html = fs.readFileSync(path.join(rootDir, "public/entregas/index.html"), "utf-8");
-    const dom = new JSDOM(html);
-    const document = dom.window.document;
+    const document = loadDocument("public/entregas/index.html");
 
     // Link para a atividade proposta
     const linkAtividade = document.querySelector('a[href="/entregas/atividade-proposta"]');
@@ -55,9 +52,7 @@ describe("Navegação e Acesso à Página de Entregas (/entregas)", () => {
   });
 
   it("public/entregas/atividade-proposta/index.html deve conter a atividade proposta e suas seções", () => {
-    const html = fs.readFileSync(path.join(rootDir, "public/entregas/atividade-proposta/index.html"), "utf-8");
-    const dom = new JSDOM(html);
-    const document = dom.window.document;
+    const document = loadDocument("public/entregas/atividade-proposta/index.html");
 
     // Título principal sem numeração de item
     const title = document.querySelector("h1");
