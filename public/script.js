@@ -58,8 +58,56 @@
     });
   }
 
+  // ---- Botões de cópia para prompts e blocos de código ----
+  function initCopyButtons() {
+    var copyBtns = document.querySelectorAll(".btn-copy");
+    copyBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var box = btn.closest(".prompt-box");
+        var code = box ? box.querySelector(".prompt-code") : null;
+        var textToCopy = code ? (code.textContent || code.innerText) : "";
+        if (!textToCopy) return;
+
+        function markCopied() {
+          var originalHtml = btn.innerHTML;
+          btn.classList.add("copied");
+          btn.innerHTML = '<span aria-hidden="true">✓</span> Copiado!';
+          setTimeout(function () {
+            btn.classList.remove("copied");
+            btn.innerHTML = originalHtml;
+          }, 2000);
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(textToCopy).then(markCopied).catch(function () {
+            fallbackCopy(textToCopy, markCopied);
+          });
+        } else {
+          fallbackCopy(textToCopy, markCopied);
+        }
+      });
+    });
+  }
+
+  function fallbackCopy(text, cb) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand("copy");
+      cb();
+    } catch (e) {
+      // falha silenciosa se bloqueado
+    }
+    document.body.removeChild(ta);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     buildStars();
     initActiveNav();
+    initCopyButtons();
   });
 })();

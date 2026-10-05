@@ -24,33 +24,55 @@
       </a>
       <ul class="nav-links">
         <li><a href="/">Início</a></li>
+        <li><a href="/sobre-nos">Sobre nós</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="conteudo">
     <section class="section" id="entregas">
-      <p class="section-label">ENTREGAS</p>
-      <h1 class="section-title">Entregas do grupo</h1>
+      <p class="section-label">ACH2027 · GPTI</p>
+      <h1 class="section-title">Entregas e Atividades</h1>
       <p class="lead">
-        Materiais produzidos pelos integrantes do grupo para a disciplina
-        <strong>ACH2027 - Gestão de Projetos de Tecnologia da Informação</strong>, ministrada pela professora Violeta Sun.
+        Painel de atividades da disciplina <strong>ACH2027 - Gestão de Projetos de Tecnologia da Informação</strong> (docente: Profa. Dra. Violeta Sun), divididas entre a atividade proposta pelo nosso grupo e as entregas realizadas para os demais seminários.
       </p>
 
-      <!-- Lista de Entregaveis — títulos-link numerados + descrição curta -->
-      <ul class="entregas-list">
-        <li class="entrega-item">
-          <a href="/entregas/ObjetivosSMART">1. Objetivos SMART</a>
-          <p>Definição dos objetivos SMART do Projeto Bilu (documento em PDF).</p>
-        </li>
-        <li class="entrega-item">
-          <a href="/entregas/tap">2. TAP — Termo de Abertura do Projeto</a>
-          <p>Termo de Abertura do Projeto Bilu (documento em PDF).</p>
-        </li>
-        <!-- Para adicionar um entregável: copiar um <li class="entrega-item">,
-             ajustar o número/título, o href (/entregas/<slug>) e a descrição,
-             e criar public/entregas/<slug>/index.html. -->
-      </ul>
+      <!-- Bloco 1: Atividade Proposta pelo Nosso Grupo para os Demais Grupos -->
+      <div style="margin-top: 36px; margin-bottom: 40px;">
+        <h2 style="font-size: 1.5rem; color: var(--nebula-3); margin-bottom: 8px; display: flex; align-items: center; gap: 10px;">
+          <span aria-hidden="true">📢</span> Atividade Proposta pelo Nosso Grupo
+        </h2>
+        <p style="color: var(--text-dim); margin-bottom: 20px;">
+          Atividade prática do nosso seminário (<strong>Gestão da Qualidade em Projetos de Software</strong>) solicitada aos outros grupos da turma:
+        </p>
+
+        <ul class="entregas-list">
+          <li class="entrega-item">
+            <a href="/entregas/atividade-proposta">8. Atividade em Grupo com Apoio de Inteligência Artificial</a>
+            <p>Orientações práticas, prompts estruturados e diretrizes de steering para que os demais grupos elaborem o Plano de Gerenciamento da Qualidade (PGQ) e a Quality Checklist de seus próprios projetos.</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bloco 2: Nossas Entregas para Outros Grupos -->
+      <div style="margin-top: 36px; margin-bottom: 32px; border-top: 1px solid var(--line); padding-top: 32px;">
+        <h2 style="font-size: 1.5rem; color: var(--text); margin-bottom: 8px; display: flex; align-items: center; gap: 10px;">
+          <span aria-hidden="true">📝</span> Nossas Entregas para Outros Grupos
+        </h2>
+        <p style="color: var(--text-dim); margin-bottom: 20px;">
+          Materiais e atividades práticas elaboradas pelos integrantes do Projeto Bilu a pedido dos outros grupos da disciplina:
+        </p>
+
+        <ul class="entregas-list">
+          <li class="entrega-item">
+            <a href="/entregas/teste">1. Teste</a>
+            <p>isto é um teste (placeholder para entregas solicitadas por outros seminários)</p>
+          </li>
+          <!-- Para adicionar um entregável feito para outro grupo: copiar um <li class="entrega-item">,
+               ajustar o número/título, o href (/entregas/<slug>) e a descrição,
+               e criar public/entregas/<slug>/index.html. -->
+        </ul>
+      </div>
 
       <div class="hero-actions">
         <a class="btn btn-ghost" href="/">Voltar para a página inicial</a>
