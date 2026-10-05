@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05060f" />
+  <meta name="description" content="Item 8 — Atividade em Grupo com Apoio de Inteligência Artificial: proposta pelo nosso grupo aos demais grupos da disciplina ACH2027 para elaboração de PGQ e Quality Checklist." />
+  <title>Atividade Proposta aos Grupos (Item 8) — Projeto Bilu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <!-- Céu estrelado animado -->
+  <div class="starfield" id="starfield" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="/" aria-label="Bilu — página inicial">
+        <span class="brand-mark" aria-hidden="true">👽</span>
+        <span class="brand-name">Bilu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Início</a></li>
+        <li><a href="/entregas">Entregas</a></li>
+        <li><a href="/sobre-nos">Sobre nós</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="section" id="entregavel">
+      <p class="section-label">SEMINÁRIO DE GESTÃO DA QUALIDADE · ACH2027</p>
+      <h1 class="section-title">8. Atividade em Grupo com Apoio de Inteligência Artificial</h1>
+      <p class="lead">
+        Esta é a atividade proposta pelo nosso grupo (Gestão da Qualidade de Software) para que os demais grupos da turma realizem com foco em seus próprios projetos acadêmicos.
+      </p>
+
+      <article class="entrega-conteudo">
+        <!-- Caixa de Instruções aos Grupos -->
+        <div class="callout-box">
+          <p class="callout-title">
+            <span aria-hidden="true">📋</span> O que o seu grupo deve entregar
+          </p>
+          <p>
+            Cada grupo deve preparar um <strong>Plano de Gerenciamento da Qualidade (PGQ)</strong> para o projeto que está desenvolvendo, com apoio de IA. Opcionalmente, o grupo também pode criar uma <strong>checklist de qualidade</strong> derivada do plano. O PGQ deve considerar o escopo, as entregas, os recursos disponíveis e a etapa atual do projeto.
+          </p>
+          <p>
+            <strong>Como iniciar:</strong> forneçam à IA uma descrição do seu projeto, seus objetivos, requisitos, entregas, restrições e riscos relevantes, além dos documentos já elaborados pelo seu grupo. Solicitem uma primeira versão do plano e examinem se os critérios de qualidade, as métricas, as responsabilidades e as atividades propostas são claros e viáveis.
+          </p>
+          <p>
+            Os prompts a seguir são <strong>sugestões iniciais</strong>. A atividade inclui melhorar esses prompts e/ou criar novos prompts ou agentes específicos para a etapa do seu projeto. Selecionem as sugestões pertinentes ao seu contexto, priorizando a elaboração do PGQ e, caso optem por produzi-la, da checklist.
+          </p>
+        </div>
+
+        <!-- 8.1 CRIANDO UMA QUALITY CHECKLIST -->
+        <section id="item-8-1">
+          <h2>
+            <span class="badge badge-purple">8.1</span>
+            Criando uma Quality Checklist
+          </h2>
+          <p>
+            A checklist transforma critérios em verificações repetíveis e objetivas para validar as entregas do projeto acadêmico. O principal é manter o projeto coeso e seguro, evitando <em>over-engineering</em> (complexidade desnecessária para o escopo delimitado).
+          </p>
+
+          <div class="prompt-box">
+            <div class="prompt-box-header">
+              <span class="prompt-tag">
+                <span aria-hidden="true">💬</span> Prompt Sugerido 8.1 — Quality Checklist
+              </span>
+              <button type="button" class="btn-copy" aria-label="Copiar prompt 8.1">
+                <span aria-hidden="true">📋</span> Copiar prompt
+              </button>
+            </div>
+            <pre class="prompt-code">“Com base nos processos de Gestão da Qualidade do PMBOK e nas normas IEEE para a elaboração de um Software Quality Assurance Plan (SQAP), crie uma Quality Check List detalhada. Esta lista deve servir para validar as entregas do meu projeto acadêmico, garantindo que todas as fases metodológicas cumpram rigorosamente os padrões estabelecidos de QA. Não sugira checks que fogem do escopo do projeto, entenda as limitações impostas e o propósito do projeto para que não se passe por over-engineering. O principal é manter um projeto coeso, seguro e de alta qualidade sem adicionar funcionalidades que aumentem a complexidade de forma indesejada dado o escopo.”</pre>
+          </div>
+
+          <p>
+            <strong>Campos recomendados na checklist:</strong> identificação do item, critério de aceitação, resultado (<em>Sim</em>, <em>Não</em> ou <em>Não Aplicável</em>), justificativa para itens não aplicáveis, data, evidência auditável e responsável.
+          </p>
+        </section>
+
+        <!-- 8.2 STEERING PARA UM AGENTE DE CODE REVIEW -->
+        <section id="item-8-2">
+          <h2>
+            <span class="badge badge-cyan">8.2</span>
+            Steering para um Agente de Code Review
+          </h2>
+          <p>
+            O <em>steering</em> direciona o comportamento do agente de IA durante a revisão de código, priorizando legibilidade, tratamento de erros e integridade estrutural sem quebrar as regras de negócio do seu projeto.
+          </p>
+
+          <div class="prompt-box">
+            <div class="prompt-box-header">
+              <span class="prompt-tag">
+                <span aria-hidden="true">💬</span> Prompt Sugerido 8.2 — Code Review de QA
+              </span>
+              <button type="button" class="btn-copy" aria-label="Copiar prompt 8.2">
+                <span aria-hidden="true">📋</span> Copiar prompt
+              </button>
+            </div>
+            <pre class="prompt-code">“Atue como um engenheiro de QA sênior. Reveja o seguinte script de &lt;insira uma linguagem usada&gt; focado no processamento e recomendação de dados. Avalia o código com base nas melhores práticas de engenharia de software: legibilidade, tratamento de exceções e complexidade ciclomática. Sugira refatorações concretas para aumentar a qualidade estrutural. Importante mencionar que regras de negócio não devem ser quebradas, a não ser que estejam ferindo uma estrutura vital para o funcionamento do projeto, que você pode encontrar no arquivo &lt;insira caminho do arquivo de especificações ou da documentação&gt;. Todas as sugestões que interfiram em alguma parte de domínio tem que ser previamente citada e passada para aprovação minha.”</pre>
+          </div>
+
+          <p>
+            <strong>Diretrizes de Steering apresentadas no seminário:</strong>
+          </p>
+          <ul>
+            <li><strong>Contextualização prévia:</strong> faça o agente compreender objetivo, requisitos, arquitetura e critérios de aceite antes de revisar.</li>
+            <li><strong>Prioridades de análise:</strong> focar em segurança, prevenção de perda ou corrupção de dados, concorrência, desempenho, compatibilidade, observabilidade e impacto em produção.</li>
+            <li><strong>Estrutura de cada achado:</strong> exigir evidência, localização exata, impacto, severidade e sugestão acionável.</li>
+            <li><strong>Casos-limite e testes:</strong> questionar casos-limite (<em>edge cases</em>), ausência de testes e efeitos não intencionais, diferenciando problemas comprováveis de preferências subjetivas de estilo.</li>
+          </ul>
+
+          <div class="callout-box">
+            <p class="callout-title">
+              <span aria-hidden="true">💡</span> Indicação "Grill-Me" (Desafio Reflexivo)
+            </p>
+            <p>
+              A indicação <em>“grill-me”</em> apresentada nos slides propõe desafiar o raciocínio da equipe com perguntas investigativas:
+            </p>
+            <ul>
+              <li><em>“Quais riscos posso ter deixado passar?”</em></li>
+              <li><em>“Que hipótese estou tratando como fato?”</em></li>
+              <li><em>“Que teste ou evidência reduziria essa incerteza?”</em></li>
+            </ul>
+            <p>
+              Essa orientação estimula a identificação de pontos cegos conceituais e pode ser expressa diretamente no prompt do seu grupo.
+            </p>
+          </div>
+        </section>
+
+        <!-- 8.3 STEERING PARA UM AGENTE DE CRIAÇÃO DE PGQ -->
+        <section id="item-8-3">
+          <h2>
+            <span class="badge badge-purple">8.3</span>
+            Steering para um Agente de Criação de PGQ
+          </h2>
+          <p>
+            Prompt abrangente para apoiar a construção do <strong>Plano de Gerenciamento da Qualidade (PGQ)</strong> completo, alinhado ao PMBOK e aos padrões IEEE.
+          </p>
+
+          <div class="prompt-box">
+            <div class="prompt-box-header">
+              <span class="prompt-tag">
+                <span aria-hidden="true">💬</span> Prompt Sugerido 8.3 — Elaboração do PGQ
+              </span>
+              <button type="button" class="btn-copy" aria-label="Copiar prompt 8.3">
+                <span aria-hidden="true">📋</span> Copiar prompt
+              </button>
+            </div>
+            <pre class="prompt-code">“Aja como um Gerente de Projetos Sênior e Especialista em Garantia da Qualidade (QA) de Software. Preciso da sua ajuda para elaborar um Plano de Gerenciamento da Qualidade (Quality Management Plan) completo, alinhado às diretrizes do PMBOK e aos padrões IEEE.
+
+O contexto do meu projeto é o desenvolvimento de um produto de software focado em &lt;insira uma breve descrição do seu projeto, ex: uma plataforma web corporativa, um aplicativo financeiro, etc.&gt;. Para mais informações detalhadas, você consegue encontrar no arquivo &lt;caminho_arquivo&gt; para detalhes de arquitetura e regras de negócios previamente definidas.
+
+Com base neste cenário, construa o documento contendo as seguintes seções detalhadas:
+1. Objetivos de Qualidade: Metas claras e mensuráveis focadas em eficiência, segurança, tempo de resposta e estabilidade.
+2. Padrões e Normas Aplicáveis: Convenções de código, diretrizes arquiteturais e normativas que o projeto deve seguir.
+3. Papéis e Responsabilidades: Estrutura da equipe de qualidade, definindo como os papéis de desenvolvimento, revisão e gestão se encaixam na validação das entregas.
+4. Atividades de Garantia da Qualidade (QA): Processos preventivos, como revisões técnicas formais da modelagem do sistema, validação de arquitetura e padronização de ambientes.
+5. Atividades de Controle da Qualidade (QC): Técnicas de verificação das entregas, sugerindo abordagens de testes automatizados, testes de integração e revisão de código.
+6. Critérios de Aceite: Definição do que constitui uma entrega validada e quais limites de erro são aceitáveis.
+
+Inclua também o planejamento de revisões e auditorias, a estratégia de testes, ferramentas, frequência de monitoramento, fontes de dados, registros, procedimentos para não conformidades e um ciclo de melhoria contínua. Relacione as verificações ao valor esperado e às restrições do projeto. Não invente indicadores, resultados ou aprovações; identifique os pontos que dependem de definição pelos responsáveis.
+
+Caso precise de mais detalhes sobre a arquitetura ou as restrições tecnológicas, faça-me perguntas antes de gerar a versão final do documento.”</pre>
+          </div>
+
+          <p>
+            <strong>As 6 seções requeridas no PGQ:</strong>
+          </p>
+          <ol>
+            <li><strong>Objetivos de Qualidade:</strong> metas mensuráveis (eficiência, disponibilidade, tempo de resposta, acessibilidade, estabilidade).</li>
+            <li><strong>Padrões e Normas Aplicáveis:</strong> convenções de codificação, diretrizes arquiteturais, normas ISO/IEC e critérios de documentação.</li>
+            <li><strong>Papéis e Responsabilidades:</strong> papéis de desenvolvimento, revisão técnica, testes e aprovação formal.</li>
+            <li><strong>Atividades de QA (Garantia Preventiva):</strong> revisões de modelagem, validação de requisitos e padronização de processos.</li>
+            <li><strong>Atividades de QC (Controle Detectivo):</strong> execução de testes automatizados, testes de integração e inspeções de código.</li>
+            <li><strong>Critérios de Aceite:</strong> condições formais para aceitação da entrega e limites aceitáveis de desvio.</li>
+          </ol>
+        </section>
+
+        <!-- 8.4 MELHORIA DOS PROMPTS E CRIAÇÃO DE AGENTES -->
+        <section id="item-8-4">
+          <h2>
+            <span class="badge badge-green">8.4</span>
+            Melhoria dos Prompts e Criação de Agentes
+          </h2>
+          <p>
+            Após testar as sugestões, seu grupo deve identificar o que precisa ser melhorado: informações de contexto ausentes, instruções ambíguas, respostas genéricas, critérios pouco verificáveis ou atividades incompatíveis com o projeto.
+          </p>
+          <p>
+            Com base nessa análise, aperfeiçoem o prompt utilizado e/ou criem um novo prompt ou agente especializado. Ao configurar um agente, definam com clareza:
+          </p>
+
+          <div class="cards">
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">🎯</div>
+              <h3 class="card-title">1. Finalidade</h3>
+              <p>Objetivo específico da atuação do agente no seu projeto.</p>
+            </article>
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">📑</div>
+              <h3 class="card-title">2. Documentos-Fonte</h3>
+              <p>Documentos que ele deverá analisar (requisitos, arquitetura, código).</p>
+            </article>
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">🔍</div>
+              <h3 class="card-title">3. Verificações</h3>
+              <p>Critérios objetivos e checagens que serão realizadas.</p>
+            </article>
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">🛑</div>
+              <h3 class="card-title">4. Limites de Atuação</h3>
+              <p>O que o agente não tem permissão para alterar sem autorização humana.</p>
+            </article>
+          </div>
+
+          <p style="margin-top: 24px;">
+            Adaptem o foco à etapa atual do projeto (requisitos, arquitetura, implementação ou testes). O grupo deve consolidar o Plano de Gerenciamento da Qualidade e, se produzir a checklist opcional, verificar sua coerência com os critérios do plano.
+          </p>
+        </section>
+
+        <!-- Ações de Navegação -->
+        <div class="hero-actions" style="margin-top: 40px;">
+          <a class="btn btn-primary" href="/entregas">Voltar para as entregas</a>
+          <a class="btn btn-ghost" href="/">Página inicial</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="brand-mark" aria-hidden="true">👽</span>
+      <p class="footer-quote">“Busquem conhecimento.”</p>
+      <p class="footer-meta">Projeto Bilu · Astronomia e astronáutica para a OBA</p>
+    </div>
+  </footer>
+
+  <script src="../../script.js" defer></script>
+</body>
+</html>
