@@ -94,3 +94,73 @@ describe("Navegação e Acesso à Página de Entregas (/entregas)", () => {
     expect(referencias).toBeNull();
   });
 });
+
+describe("Menu Responsivo Mobile (Hambúrguer)", () => {
+  const rootDir = path.resolve(__dirname, "..");
+
+  function loadDocument(relativeHtmlPath) {
+    const html = fs.readFileSync(path.join(rootDir, relativeHtmlPath), "utf-8");
+    return new JSDOM(html).window.document;
+  }
+
+  it("deve conter o botão nav-toggle com atributos de acessibilidade nas páginas principais", () => {
+    const pages = [
+      "public/index.html",
+      "public/sobre-nos/index.html",
+      "public/entregas/index.html",
+      "public/entregas/atividade-proposta/index.html",
+      "public/entregas/tap/index.html",
+      "public/entregas/ObjetivosSMART/index.html",
+    ];
+
+    for (const page of pages) {
+      const document = loadDocument(page);
+      const toggle = document.querySelector(".nav-toggle");
+      expect(toggle).not.toBeNull();
+      expect(toggle.getAttribute("aria-expanded")).toBe("false");
+      expect(toggle.getAttribute("aria-controls")).toBe("nav-menu");
+      expect(toggle.getAttribute("aria-label")).toBe("Abrir menu de navegação");
+
+      const menu = document.getElementById("nav-menu");
+      expect(menu).not.toBeNull();
+      expect(menu.classList.contains("nav-links")).toBe(true);
+    }
+  });
+
+  it("public/index.html deve permitir acessar Sobre nós e Entregas a partir do menu", () => {
+    const document = loadDocument("public/index.html");
+    const sobreNos = document.querySelector('#nav-menu a[href="/sobre-nos"]');
+    const entregas = document.querySelector('#nav-menu a[href="/entregas"]');
+
+    expect(sobreNos).not.toBeNull();
+    expect(sobreNos.textContent.trim()).toBe("Sobre nós");
+    expect(entregas).not.toBeNull();
+    expect(entregas.textContent.trim()).toBe("Entregas");
+  });
+
+  it("public/script.js deve alternar classes e atributos aria ao interagir com o menu", () => {
+    const scriptCode = fs.readFileSync(path.join(rootDir, "public/script.js"), "utf-8");
+    const html = fs.readFileSync(path.join(rootDir, "public/index.html"), "utf-8");
+
+    const dom = new JSDOM(html, { runScripts: "dangerously" });
+    dom.window.eval(scriptCode);
+    dom.window.document.dispatchEvent(new dom.window.Event("DOMContentLoaded"));
+
+    const toggle = dom.window.document.querySelector(".nav-toggle");
+    const menu = dom.window.document.querySelector(".nav-links");
+
+    expect(toggle.getAttribute("aria-expanded")).toBe("false");
+    expect(menu.classList.contains("is-open")).toBe(false);
+
+    // Clicar para abrir
+    toggle.click();
+    expect(toggle.getAttribute("aria-expanded")).toBe("true");
+    expect(menu.classList.contains("is-open")).toBe(true);
+
+    // Clicar em um link dentro do menu para fechar
+    const firstLink = menu.querySelector("a");
+    firstLink.click();
+    expect(toggle.getAttribute("aria-expanded")).toBe("false");
+    expect(menu.classList.contains("is-open")).toBe(false);
+  });
+});
