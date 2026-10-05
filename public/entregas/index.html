@@ -8,7 +8,7 @@
   <title>Entregas — Projeto Bilu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <!-- Reusa a folha compartilhada do Site_Bilu (resolve para /styles.css) -->
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <!-- Céu estrelado (opcional, consistência de tema; preenchido via JS, com fallback CSS) -->
@@ -22,7 +22,10 @@
         <span class="brand-mark" aria-hidden="true">👽</span>
         <span class="brand-name">Bilu</span>
       </a>
-      <ul class="nav-links">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu de navegação">
+        <span class="nav-toggle-icon" aria-hidden="true">☰</span>
+      </button>
+      <ul class="nav-links" id="nav-menu">
         <li><a href="/">Início</a></li>
         <li><a href="/sobre-nos">Sobre nós</a></li>
       </ul>
@@ -38,28 +41,28 @@
       </p>
 
       <!-- Bloco 1: Atividade Proposta pelo Nosso Grupo para os Demais Grupos -->
-      <div style="margin-top: 36px; margin-bottom: 40px;">
-        <h2 style="font-size: 1.5rem; color: var(--nebula-3); margin-bottom: 8px; display: flex; align-items: center; gap: 10px;">
+      <div class="entregas-group">
+        <h2 class="entregas-group-title highlight">
           <span aria-hidden="true">📢</span> Atividade Proposta pelo Nosso Grupo
         </h2>
-        <p style="color: var(--text-dim); margin-bottom: 20px;">
+        <p class="entregas-group-desc">
           Atividade prática do nosso seminário (<strong>Gestão da Qualidade em Projetos de Software</strong>) solicitada aos outros grupos da turma:
         </p>
 
         <ul class="entregas-list">
           <li class="entrega-item">
-            <a href="/entregas/atividade-proposta">8. Atividade em Grupo com Apoio de Inteligência Artificial</a>
+            <a href="/entregas/atividade-proposta">Atividade em Grupo com Apoio de Inteligência Artificial</a>
             <p>Orientações práticas, prompts estruturados e diretrizes de steering para que os demais grupos elaborem o Plano de Gerenciamento da Qualidade (PGQ) e a Quality Checklist de seus próprios projetos.</p>
           </li>
         </ul>
       </div>
 
       <!-- Bloco 2: Nossas Entregas para Outros Grupos -->
-      <div style="margin-top: 36px; margin-bottom: 32px; border-top: 1px solid var(--line); padding-top: 32px;">
-        <h2 style="font-size: 1.5rem; color: var(--text); margin-bottom: 8px; display: flex; align-items: center; gap: 10px;">
+      <div class="entregas-group has-divider">
+        <h2 class="entregas-group-title">
           <span aria-hidden="true">📝</span> Nossas Entregas para Outros Grupos
         </h2>
-        <p style="color: var(--text-dim); margin-bottom: 20px;">
+        <p class="entregas-group-desc">
           Materiais e atividades práticas elaboradas pelos integrantes do Projeto Bilu a pedido dos outros grupos da disciplina:
         </p>
 
@@ -93,6 +96,6 @@
   </footer>
 
   <!-- Opcional: reaproveita o céu estrelado da home -->
-  <script src="../script.js" defer></script>
+  <script src="/script.js" defer></script>
 </body>
 </html>

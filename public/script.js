@@ -2,7 +2,7 @@
 (function () {
   "use strict";
 
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reduceMotion = typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // ---- Gera estrelas dinâmicas no #starfield ----
   function buildStars() {
@@ -105,9 +105,58 @@
     document.body.removeChild(ta);
   }
 
+  // ---- Menu responsivo móvel (hambúrguer) ----
+  function initMobileNav() {
+    var toggle = document.querySelector(".nav-toggle");
+    var menu = document.querySelector(".nav-links");
+    if (!toggle || !menu) return;
+
+    function setOpen(open) {
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Fechar menu de navegação" : "Abrir menu de navegação");
+      var icon = toggle.querySelector(".nav-toggle-icon");
+      if (icon) {
+        icon.textContent = open ? "✕" : "☰";
+      }
+      if (open) {
+        menu.classList.add("is-open");
+      } else {
+        menu.classList.remove("is-open");
+      }
+    }
+
+    toggle.addEventListener("click", function () {
+      var isOpen = menu.classList.contains("is-open");
+      setOpen(!isOpen);
+    });
+
+    // Fechar ao clicar em qualquer link (importante para rolagem suave na mesma página)
+    menu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        setOpen(false);
+      });
+    });
+
+    // Fechar ao pressionar a tecla Escape
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menu.classList.contains("is-open")) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+
+    // Fechar ao clicar fora do menu
+    document.addEventListener("click", function (e) {
+      if (menu.classList.contains("is-open") && !toggle.contains(e.target) && !menu.contains(e.target)) {
+        setOpen(false);
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     buildStars();
     initActiveNav();
     initCopyButtons();
+    initMobileNav();
   });
 })();

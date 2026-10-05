@@ -8,7 +8,7 @@
   <title>TAP — Projeto Bilu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <!-- Dois níveis de profundidade: resolve para /styles.css -->
-  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <!-- Céu estrelado (opcional, consistência de tema; preenchido via JS, com fallback CSS) -->
@@ -22,9 +22,13 @@
         <span class="brand-mark" aria-hidden="true">👽</span>
         <span class="brand-name">Bilu</span>
       </a>
-      <ul class="nav-links">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu de navegação">
+        <span class="nav-toggle-icon" aria-hidden="true">☰</span>
+      </button>
+      <ul class="nav-links" id="nav-menu">
         <li><a href="/">Início</a></li>
         <li><a href="/entregas">Entregas</a></li>
+        <li><a href="/sobre-nos">Sobre nós</a></li>
       </ul>
     </nav>
   </header>
@@ -72,6 +76,6 @@
   </footer>
 
   <!-- Opcional: reaproveita o céu estrelado da home (dois níveis) -->
-  <script src="../../script.js" defer></script>
+  <script src="/script.js" defer></script>
 </body>
 </html>
