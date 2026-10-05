@@ -3,8 +3,35 @@ import fs from "fs";
 import path from "path";
 import { JSDOM } from "jsdom";
 
-describe("Páginas de Entregas e Atividade Proposta (Item 8)", () => {
+describe("Navegação e Acesso à Página de Entregas (/entregas)", () => {
   const rootDir = path.resolve(__dirname, "..");
+
+  it("public/index.html deve conter link para /entregas na navbar e manter o rodapé limpo", () => {
+    const html = fs.readFileSync(path.join(rootDir, "public/index.html"), "utf-8");
+    const dom = new JSDOM(html);
+    const document = dom.window.document;
+
+    // Link na navegação superior (navbar)
+    const navLink = document.querySelector('.nav-links a[href="/entregas"]');
+    expect(navLink).not.toBeNull();
+    expect(navLink.textContent.trim()).toBe("Entregas");
+
+    // Rodapé limpo (sem links intrusivos de entregas)
+    const footerLink = document.querySelector('.site-footer a[href="/entregas"]');
+    expect(footerLink).toBeNull();
+  });
+
+  it("public/sobre-nos/index.html deve conter link para /entregas na navbar e manter o rodapé limpo", () => {
+    const html = fs.readFileSync(path.join(rootDir, "public/sobre-nos/index.html"), "utf-8");
+    const dom = new JSDOM(html);
+    const document = dom.window.document;
+
+    const navLink = document.querySelector('.nav-links a[href="/entregas"]');
+    expect(navLink).not.toBeNull();
+
+    const footerLink = document.querySelector('.site-footer a[href="/entregas"]');
+    expect(footerLink).toBeNull();
+  });
 
   it("public/entregas/index.html deve separar visualmente atividade proposta e entregas para outros grupos", () => {
     const html = fs.readFileSync(path.join(rootDir, "public/entregas/index.html"), "utf-8");
@@ -17,7 +44,7 @@ describe("Páginas de Entregas e Atividade Proposta (Item 8)", () => {
     expect(linkAtividade.textContent).toContain("Atividade em Grupo com Apoio de Inteligência Artificial");
     expect(linkAtividade.textContent).not.toContain("8.");
 
-    // Link para entregas feitas para outros grupos
+    // Link para entregas feitas para outros grupos (Objetivos SMART)
     const linkOutras = document.querySelector('a[href="/entregas/ObjetivosSMART"]');
     expect(linkOutras).not.toBeNull();
 
@@ -50,11 +77,11 @@ describe("Páginas de Entregas e Atividade Proposta (Item 8)", () => {
     const prompts = document.querySelectorAll(".prompt-code");
     expect(prompts.length).toBeGreaterThanOrEqual(3);
 
-    // Prompt 8.1 - SQAP e Quality Checklist
+    // Prompt SQAP e Quality Checklist
     expect(prompts[0].textContent).toContain("Quality Check List detalhada");
     expect(prompts[0].textContent).toContain("over-engineering");
 
-    // Prompt 8.2 - Code Review e Engenheiro de QA Sênior
+    // Prompt Code Review e Engenheiro de QA Sênior
     expect(prompts[1].textContent).toContain("engenheiro de QA sênior");
     expect(prompts[1].textContent).toContain("complexidade ciclomática");
 
@@ -62,7 +89,7 @@ describe("Páginas de Entregas e Atividade Proposta (Item 8)", () => {
     expect(document.body.textContent).toContain("Grill-Me");
     expect(document.body.textContent).toContain("Quais riscos posso ter deixado passar?");
 
-    // Prompt 8.3 - PGQ (6 seções)
+    // Prompt PGQ (6 seções)
     expect(prompts[2].textContent).toContain("Plano de Gerenciamento da Qualidade");
     expect(prompts[2].textContent).toContain("1. Objetivos de Qualidade");
     expect(prompts[2].textContent).toContain("6. Critérios de Aceite");
