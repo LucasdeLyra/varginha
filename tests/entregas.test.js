@@ -11,13 +11,14 @@ describe("Páginas de Entregas e Atividade Proposta (Item 8)", () => {
     const dom = new JSDOM(html);
     const document = dom.window.document;
 
-    // Link para a atividade proposta (Item 8)
+    // Link para a atividade proposta
     const linkAtividade = document.querySelector('a[href="/entregas/atividade-proposta"]');
     expect(linkAtividade).not.toBeNull();
-    expect(linkAtividade.textContent).toContain("8. Atividade em Grupo com Apoio de Inteligência Artificial");
+    expect(linkAtividade.textContent).toContain("Atividade em Grupo com Apoio de Inteligência Artificial");
+    expect(linkAtividade.textContent).not.toContain("8.");
 
     // Link para entregas feitas para outros grupos
-    const linkOutras = document.querySelector('a[href="/entregas/teste"]');
+    const linkOutras = document.querySelector('a[href="/entregas/ObjetivosSMART"]');
     expect(linkOutras).not.toBeNull();
 
     // Verificação de acessibilidade
@@ -26,20 +27,21 @@ describe("Páginas de Entregas e Atividade Proposta (Item 8)", () => {
     expect(skipLink.getAttribute("href")).toBe("#conteudo");
   });
 
-  it("public/entregas/atividade-proposta/index.html deve conter a íntegra do Item 8 e seus subitens", () => {
+  it("public/entregas/atividade-proposta/index.html deve conter a atividade proposta e suas seções", () => {
     const html = fs.readFileSync(path.join(rootDir, "public/entregas/atividade-proposta/index.html"), "utf-8");
     const dom = new JSDOM(html);
     const document = dom.window.document;
 
-    // Título principal
+    // Título principal sem numeração de item
     const title = document.querySelector("h1");
-    expect(title.textContent).toContain("8. Atividade em Grupo com Apoio de Inteligência Artificial");
+    expect(title.textContent).toContain("Atividade em Grupo com Apoio de Inteligência Artificial");
+    expect(title.textContent).not.toContain("8.");
 
-    // Subitens 8.1, 8.2, 8.3, 8.4
-    expect(document.getElementById("item-8-1")).not.toBeNull();
-    expect(document.getElementById("item-8-2")).not.toBeNull();
-    expect(document.getElementById("item-8-3")).not.toBeNull();
-    expect(document.getElementById("item-8-4")).not.toBeNull();
+    // Seções temáticas sem numeração 8.x
+    expect(document.getElementById("quality-checklist")).not.toBeNull();
+    expect(document.getElementById("code-review")).not.toBeNull();
+    expect(document.getElementById("criacao-pgq")).not.toBeNull();
+    expect(document.getElementById("melhoria-prompts")).not.toBeNull();
 
     // Prompts e botões de cópia
     const copyButtons = document.querySelectorAll(".btn-copy");
