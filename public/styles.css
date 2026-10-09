@@ -378,6 +378,16 @@ code {
   color: var(--text-dim);
 }
 
+/* Imagem embutida (entregável em imagem, ex.: cronograma) */
+.entrega-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+}
+
 /* ---------- Integrantes (Sobre nós) ---------- */
 .membros {
   display: grid;

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05060f" />
+  <meta name="description" content="Gestão de Recursos — entregável do Projeto Bilu. Documento em PDF." />
+  <title>Gestão de Recursos — Projeto Bilu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <!-- Dois níveis de profundidade: resolve para /styles.css -->
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <!-- Céu estrelado (opcional, consistência de tema; preenchido via JS, com fallback CSS) -->
+  <div class="starfield" id="starfield" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="/" aria-label="Bilu — página inicial">
+        <span class="brand-mark" aria-hidden="true">👽</span>
+        <span class="brand-name">Bilu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Início</a></li>
+        <li><a href="/entregas">Entregas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="section" id="entregavel">
+      <p class="section-label">ENTREGA</p>
+      <h1 class="section-title">Gestão de Recursos</h1>
+      <p class="lead">
+        Documento de Gestão de Recursos do Projeto Bilu. Visualize o documento
+        abaixo ou faça o download em PDF.
+      </p>
+
+      <!-- Área de conteúdo do entregável: visualizador de PDF -->
+      <div class="entrega-conteudo">
+        <!-- O arquivo tem espaços no nome, então o caminho é codificado (%20). -->
+        <object
+          class="pdf-viewer"
+          data="Gest%C3%A3o%20de%20Recursos.pdf"
+          type="application/pdf"
+          aria-label="Gestão de Recursos (PDF)"
+        >
+          <p>
+            Seu navegador não consegue exibir o PDF diretamente.
+            <a href="Gest%C3%A3o%20de%20Recursos.pdf" target="_blank" rel="noopener">
+              Abrir a Gestão de Recursos em uma nova aba
+            </a>.
+          </p>
+        </object>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="Gest%C3%A3o%20de%20Recursos.pdf" target="_blank" rel="noopener">Abrir PDF em nova aba</a>
+        <a class="btn btn-ghost" href="/entregas">Voltar para as entregas</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="brand-mark" aria-hidden="true">👽</span>
+      <p class="footer-quote">“Busquem conhecimento.”</p>
+      <p class="footer-meta">Projeto Bilu · Astronomia e astronáutica para a OBA</p>
+    </div>
+  </footer>
+
+  <!-- Opcional: reaproveita o céu estrelado da home (dois níveis) -->
+  <script src="../../script.js" defer></script>
+</body>
+</html>
