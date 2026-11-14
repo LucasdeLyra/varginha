@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full scroll-smooth">
+<!-- Chosen Palette: Slate & Indigo Minimalist Warm -->
+<!-- Application Structure Plan: Interactive single-page guide for the Risk Management activity. Structured into 4 main thematic sections: 1. Step-by-Step Flow (cards), 2. Prompt Repository (copyable containers with bracket highlighting), 3. Deliverables Checklist with PDF format callout, 4. Expert Tip section. Designed for quick scanning, copying prompts with feedback, and tracking submission progress. -->
+<!-- Visualization & Content Choices:
+     - Steps -> Flow cards with numbered badges and stage tags for intuitive sequence reading.
+     - Prompts -> Dark monospaced code blocks with high-contrast variable brackets and a 1-click clipboard button.
+     - Deliverables -> Interactive checklist with real-time completion counter + PDF format notice.
+     - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. FontAwesome icons & Tailwind dynamic elements used instead. -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Atividade - Gestão de Risco</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#1e1b4b',
+                        },
+                        slateDark: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .prompt-bracket {
+            background-color: #fef3c7;
+            color: #92400e;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            border: 1px dashed #f59e0b;
+            display: inline-block;
+        }
+        .step-number {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-full flex flex-col selection:bg-brand-500 selection:text-white">
+
+    <!-- Header / Hero Section -->
+    <header class="relative overflow-hidden bg-slateDark text-white pt-12 pb-20 px-4 sm:px-6 lg:px-8 shadow-xl">
+        <div class="absolute -top-24 -left-20 w-96 h-96 bg-brand-600/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 right-0 w-80 h-80 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-brand-500/20 text-brand-100 border border-brand-500/30">
+                    <i class="fa-solid fa-shield-halved text-brand-500"></i> Gestão de Risco
+                </span>
+                <span class="text-xs text-slate-400 flex items-center gap-2">
+                    <i class="fa-regular fa-file-lines"></i> Guia de Atividade
+                </span>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+                Como fazer a atividade — <span class="bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">Gestão de Risco</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-300 max-w-3xl font-normal leading-relaxed">
+                É só seguir as etapas abaixo e usar os três prompts incluídos neste guia.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20 space-y-12 pb-16 flex-grow w-full">
+
+        <!-- SECTION 1: Passo a Passo -->
+        <section class="bg-white rounded-2xl shadow-xl border border-slate-200/80 p-6 sm:p-8">
+            <div class="flex items-center gap-3 mb-8 pb-4 border-b border-slate-100">
+                <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-lg">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Passo a passo</h2>
+                    <p class="text-sm text-slate-500">Etapas para a realização da atividade</p>
+                </div>
+            </div>
+
+            <!-- Flow Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Step 1 -->
+                <div class="group relative bg-slate-50/70 hover:bg-white rounded-xl p-5 border border-slate-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="step-number text-white font-bold w-8 h-8 rounded-lg flex items-center justify-center text-sm shadow-md">1</span>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-200/70 text-slate-600">Etapa 1</span>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Escolher a etapa</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Escolham uma etapa do projeto. Expliquem em poucas linhas o que é o projeto, quem vai usar, qual é o prazo e o tamanho da equipe.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="group relative bg-slate-50/70 hover:bg-white rounded-xl p-5 border border-slate-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="step-number text-white font-bold w-8 h-8 rounded-lg flex items-center justify-center text-sm shadow-md">2</span>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-700">Prompt A</span>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Listar os riscos</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Usem o Prompt A. Substituam os trechos entre colchetes pelas informações do projeto e peçam à IA para listar os riscos.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="group relative bg-slate-50/70 hover:bg-white rounded-xl p-5 border border-slate-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="step-number text-white font-bold w-8 h-8 rounded-lg flex items-center justify-center text-sm shadow-md">3</span>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">Revisão</span>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Revisar os riscos</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Revisem os riscos. Apaguem os que não fazem sentido para o contexto de vocês e acrescentem algum que esteja faltando.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="group relative bg-slate-50/70 hover:bg-white rounded-xl p-5 border border-slate-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="step-number text-white font-bold w-8 h-8 rounded-lg flex items-center justify-center text-sm shadow-md">4</span>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-purple-100 text-purple-700">Prompt B</span>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Avaliar probabilidade e impacto</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Usem o Prompt B. Peçam à IA para avaliar probabilidade e impacto dos riscos restantes. Se faltarem informações, ela deve avisar em vez de inventar notas.
+                    </p>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="group relative bg-slate-50/70 hover:bg-white rounded-xl p-5 border border-slate-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="step-number text-white font-bold w-8 h-8 rounded-lg flex items-center justify-center text-sm shadow-md">5</span>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800">Prompt C</span>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Definir respostas e indicadores</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Usem o Prompt C. Para os três riscos de nível mais alto, definam respostas e indicadores de alerta.
+                    </p>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="group relative bg-slate-50/70 hover:bg-white rounded-xl p-5 border border-slate-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="step-number text-white font-bold w-8 h-8 rounded-lg flex items-center justify-center text-sm shadow-md">6</span>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-100 text-blue-800">Apresentação</span>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Apresentar o resultado</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Apresentem o resultado. Mostrem os prompts usados, o que foi descartado ou ajustado e o que mudou após melhorar o prompt.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION 2: Prompts para copiar e usar -->
+        <section class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-slate-200">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
+                        <i class="fa-solid fa-terminal text-brand-600"></i> Prompts para copiar e usar
+                    </h2>
+                </div>
+                <span class="inline-flex items-center text-xs font-medium text-amber-700 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full w-fit">
+                    <i class="fa-solid fa-pen text-amber-500 mr-1.5"></i> Substitua os trechos entre colchetes
+                </span>
+            </div>
+
+            <!-- PROMPT A -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden transition-all hover:border-brand-300">
+                <div class="bg-slate-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-indigo-500 text-white uppercase tracking-wider">PROMPT A</span>
+                        <h3 class="font-semibold text-base sm:text-lg text-slate-100">Identificação</h3>
+                    </div>
+                    <button onclick="copyPrompt('prompt-a-text', this)" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-all shadow-sm active:scale-95">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>Copiar Prompt A</span>
+                    </button>
+                </div>
+                <div class="p-6 bg-slate-900/95 font-mono text-xs sm:text-sm text-slate-200 leading-relaxed relative overflow-x-auto">
+                    <p id="prompt-a-text" class="whitespace-pre-wrap">Você é analista de riscos de projetos. Nosso projeto é: <span class="prompt-bracket">[três linhas explicando o que é, quem usa, prazo e tamanho da equipe]</span>. Estamos na etapa de <span class="prompt-bracket">[etapa]</span>. Liste 8 riscos possíveis dessa etapa, um por linha, separando causa, evento e consequência. Não classifique gravidade nem sugira solução ainda. Marque com [?] os riscos que dependem de informação que não temos.</p>
+                </div>
+            </div>
+
+            <!-- PROMPT B -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden transition-all hover:border-purple-300">
+                <div class="bg-slate-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-purple-600 text-white uppercase tracking-wider">PROMPT B</span>
+                        <h3 class="font-semibold text-base sm:text-lg text-slate-100">Análise e priorização</h3>
+                    </div>
+                    <button onclick="copyPrompt('prompt-b-text', this)" class="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-all shadow-sm active:scale-95">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>Copiar Prompt B</span>
+                    </button>
+                </div>
+                <div class="p-6 bg-slate-900/95 font-mono text-xs sm:text-sm text-slate-200 leading-relaxed relative overflow-x-auto">
+                    <p id="prompt-b-text" class="whitespace-pre-wrap">Para cada risco da lista anterior, proponha uma nota de 1 a 5 de probabilidade e outra de impacto, usando esta escala: <span class="prompt-bracket">[colar a escala adotada]</span>. Justifique cada nota em uma frase. Onde a informação que você tem não sustentar a nota, diga que faltam dados em vez de estimar. Responda em tabela com as colunas risco, probabilidade, impacto, nível e justificativa.</p>
+                </div>
+            </div>
+
+            <!-- PROMPT C -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden transition-all hover:border-emerald-300">
+                <div class="bg-slate-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-emerald-600 text-white uppercase tracking-wider">PROMPT C</span>
+                        <h3 class="font-semibold text-base sm:text-lg text-slate-100">Resposta e monitoramento</h3>
+                    </div>
+                    <button onclick="copyPrompt('prompt-c-text', this)" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-all shadow-sm active:scale-95">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>Copiar Prompt C</span>
+                    </button>
+                </div>
+                <div class="p-6 bg-slate-900/95 font-mono text-xs sm:text-sm text-slate-200 leading-relaxed relative overflow-x-auto">
+                    <p id="prompt-c-text" class="whitespace-pre-wrap">Para os três riscos de nível mais alto, proponha duas alternativas de resposta cada, indicando se é evitar, mitigar, transferir ou aceitar e qual o esforço aproximado de cada uma. Para cada risco, proponha também um indicador com gatilho numérico que avisaria o time antes de o risco se concretizar.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION 3: O que entregar -->
+        <section class="bg-white rounded-2xl shadow-xl border border-slate-200/80 p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-100">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-box-archive"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900">O que entregar</h2>
+                        <p class="text-sm text-slate-500">Itens requeridos para a entrega da atividade</p>
+                    </div>
+                </div>
+                <!-- Progress bar -->
+                <div class="flex items-center gap-3 bg-slate-50 px-4 py-2 rounded-xl border border-slate-200">
+                    <span class="text-xs font-semibold text-slate-600" id="progress-text">0/5 concluídos</span>
+                    <div class="w-28 bg-slate-200 rounded-full h-2 overflow-hidden">
+                        <div id="progress-bar" class="bg-emerald-500 h-full w-0 transition-all duration-300"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner Informativo do Formato de Entrega -->
+            <div class="mb-6 p-4 bg-emerald-50 border border-emerald-200 rounded-xl flex items-start gap-3">
+                <i class="fa-solid fa-file-pdf text-emerald-600 text-xl mt-0.5"></i>
+                <div>
+                    <h4 class="font-bold text-emerald-900 text-sm">Formato de Entrega Obrigatório</h4>
+                    <p class="text-xs text-emerald-800 mt-0.5">O resultado final desta atividade deve ser compilado e entregue em um único <strong>arquivo PDF / documento</strong> contendo todos os itens listados abaixo.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="checklist-container">
+                <!-- Item 1 -->
+                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-slate-300 bg-slate-50/50 hover:bg-slate-50 cursor-pointer transition-all">
+                    <input type="checkbox" onchange="updateProgress()" class="mt-1 w-5 h-5 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500 cursor-pointer">
+                    <span class="text-sm text-slate-700 leading-snug">
+                        A etapa escolhida e uma breve descrição do projeto.
+                    </span>
+                </label>
+
+                <!-- Item 2 -->
+                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-slate-300 bg-slate-50/50 hover:bg-slate-50 cursor-pointer transition-all">
+                    <input type="checkbox" onchange="updateProgress()" class="mt-1 w-5 h-5 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500 cursor-pointer">
+                    <span class="text-sm text-slate-700 leading-snug">
+                        Os riscos levantados pelo Prompt A, revisados pelo grupo.
+                    </span>
+                </label>
+
+                <!-- Item 3 -->
+                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-slate-300 bg-slate-50/50 hover:bg-slate-50 cursor-pointer transition-all">
+                    <input type="checkbox" onchange="updateProgress()" class="mt-1 w-5 h-5 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500 cursor-pointer">
+                    <span class="text-sm text-slate-700 leading-snug">
+                        A tabela de análise e priorização do Prompt B.
+                    </span>
+                </label>
+
+                <!-- Item 4 -->
+                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-slate-300 bg-slate-50/50 hover:bg-slate-50 cursor-pointer transition-all">
+                    <input type="checkbox" onchange="updateProgress()" class="mt-1 w-5 h-5 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500 cursor-pointer">
+                    <span class="text-sm text-slate-700 leading-snug">
+                        As respostas e os indicadores dos três riscos mais altos, conforme o Prompt C.
+                    </span>
+                </label>
+
+                <!-- Item 5 -->
+                <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-200 hover:border-slate-300 bg-slate-50/50 hover:bg-slate-50 cursor-pointer transition-all md:col-span-2">
+                    <input type="checkbox" onchange="updateProgress()" class="mt-1 w-5 h-5 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500 cursor-pointer">
+                    <span class="text-sm text-slate-700 leading-snug">
+                        Uma explicação curta do que foi descartado e do que mudou após melhorar o prompt.
+                    </span>
+                </label>
+            </div>
+        </section>
+
+
+        <!-- SECTION 4: Dica -->
+        <section class="bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-transparent rounded-2xl border border-amber-200/80 p-6 sm:p-8 flex flex-col sm:flex-row items-start gap-5 relative overflow-hidden">
+            <div class="w-12 h-12 rounded-2xl bg-amber-500 text-white flex items-center justify-center font-bold text-xl shrink-0 shadow-lg shadow-amber-500/30">
+                <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-lg font-bold text-amber-950 flex items-center gap-2">
+                    Dica
+                </h3>
+                <p class="text-sm text-amber-900/90 leading-relaxed">
+                    Usem exemplos que façam sentido para o projeto de vocês. Não é necessário aceitar tudo que a IA sugerir; o grupo deve revisar o resultado.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl border border-slate-700 flex items-center gap-3 transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none z-50">
+        <div class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <p class="text-xs font-bold text-white">Copiado com sucesso!</p>
+            <p class="text-[11px] text-slate-300">Prompt pronto para ser colado na sua IA.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slateDark border-t border-slate-800 text-slate-400 text-xs py-8 px-4 text-center mt-auto">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© Como fazer a atividade — Gestão de Risco</p>
+            <p class="text-slate-500">Guia de orientação e acompanhamento</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        function copyPrompt(elementId, buttonElement) {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+
+            const textToCopy = el.innerText || el.textContent;
+
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = textToCopy;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast();
+
+                const originalHtml = buttonElement.innerHTML;
+                buttonElement.innerHTML = `<i class="fa-solid fa-check"></i> <span>Copiado!</span>`;
+                buttonElement.classList.add('bg-emerald-600');
+
+                setTimeout(() => {
+                    buttonElement.innerHTML = originalHtml;
+                    buttonElement.classList.remove('bg-emerald-600');
+                }, 2000);
+
+            } catch (err) {
+                console.error('Falha ao copiar:', err);
+            } finally {
+                document.body.removeChild(tempTextArea);
+            }
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+            }, 3000);
+        }
+
+        function updateProgress() {
+            const container = document.getElementById('checklist-container');
+            const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+            const total = checkboxes.length;
+            let checkedCount = 0;
+
+            checkboxes.forEach(cb => {
+                if (cb.checked) {
+                    checkedCount++;
+                    cb.closest('label').classList.add('bg-emerald-50/60', 'border-emerald-200');
+                } else {
+                    cb.closest('label').classList.remove('bg-emerald-50/60', 'border-emerald-200');
+                }
+            });
+
+            const percentage = (checkedCount / total) * 100;
+            document.getElementById('progress-bar').style.width = `${percentage}%`;
+            document.getElementById('progress-text').innerText = `${checkedCount}/${total} concluídos`;
+        }
+    </script>
+</body>
+</html>
