@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05060f" />
+  <meta name="description" content="Matriz de Poder e Interesse — gestão de stakeholders do Projeto Bilu, com a justificativa de cada classificação." />
+  <title>Matriz de Poder e Interesse — Projeto Bilu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <!-- Dois níveis de profundidade: resolve para /styles.css -->
+  <link rel="stylesheet" href="../../styles.css" />
+  <style>
+    /* Estilos exclusivos desta entrega: matriz 2x2 de Poder x Interesse */
+    .matriz {
+      display: grid;
+      grid-template-columns: auto 1fr 1fr;
+      grid-template-rows: 1fr 1fr auto;
+      gap: 12px;
+      margin: 24px 0 12px;
+    }
+    .matriz-eixo-y {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .matriz-eixo-x {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .quadrante {
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      background: var(--card-bg);
+      min-height: 170px;
+    }
+    .quadrante h3 { margin: 0 0 2px; font-size: 1.05rem; }
+    .quadrante .quadrante-sub {
+      margin: 0 0 12px;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+    }
+    .quadrante ul { margin: 0; padding-left: 18px; }
+    .quadrante li { margin: 4px 0; color: var(--text); font-size: 0.95rem; }
+    .q-satisfeito { border-color: rgba(37, 99, 235, 0.45); background: rgba(37, 99, 235, 0.08); }
+    .q-satisfeito h3 { color: #93c5fd; }
+    .q-perto { border-color: rgba(124, 58, 237, 0.55); background: rgba(124, 58, 237, 0.12); }
+    .q-perto h3 { color: #c4b5fd; }
+    .q-monitorar { border-color: rgba(255, 255, 255, 0.14); }
+    .q-monitorar h3 { color: var(--text-dim); }
+    .q-informado { border-color: rgba(34, 211, 238, 0.40); background: rgba(34, 211, 238, 0.07); }
+    .q-informado h3 { color: #a5f3fc; }
+    .tag-quadrante {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .tag-perto { background: rgba(124, 58, 237, 0.18); color: #c4b5fd; }
+    .tag-satisfeito { background: rgba(37, 99, 235, 0.18); color: #93c5fd; }
+    .tag-informado { background: rgba(34, 211, 238, 0.15); color: #a5f3fc; }
+    .tag-monitorar { background: rgba(255, 255, 255, 0.08); color: var(--text-dim); }
+    .checklist-table td { vertical-align: top; color: var(--text-dim); }
+    .checklist-table td:first-child { color: var(--text); font-weight: 600; }
+    @media (max-width: 640px) {
+      .matriz { grid-template-columns: 1fr; grid-template-rows: none; }
+      .matriz-eixo-y, .matriz-eixo-x { display: none; }
+      .quadrante { min-height: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Céu estrelado (opcional, consistência de tema; preenchido via JS, com fallback CSS) -->
+  <div class="starfield" id="starfield" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="/" aria-label="Bilu — página inicial">
+        <span class="brand-mark" aria-hidden="true">👽</span>
+        <span class="brand-name">Bilu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Início</a></li>
+        <li><a href="/entregas">Entregas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="section" id="entregavel">
+      <p class="section-label">ENTREGA · GRUPO VARGINHA</p>
+      <h1 class="section-title">Matriz de Poder e Interesse</h1>
+      <p class="lead">
+        Gestão de stakeholders do Projeto Bilu: posicionamento de cada parte interessada
+        na matriz de poder e interesse, com a justificativa de cada classificação.
+      </p>
+
+      <div class="entrega-conteudo">
+        <h2>Critérios adotados</h2>
+        <ul>
+          <li><strong>Poder:</strong> capacidade de decidir, liberar recursos ou interferir no andamento do projeto.</li>
+          <li><strong>Interesse:</strong> o quanto o stakeholder é afetado pelos resultados do projeto ou se envolve com eles.</li>
+        </ul>
+        <p>
+          Os stakeholders foram levantados a partir do Termo de Abertura do Projeto (TAP) e do
+          Plano de Gerenciamento das Comunicações do Projeto Bilu, uma plataforma digital
+          gamificada de astronomia e astronáutica para preparar estudantes do ensino básico para a OBA.
+        </p>
+
+        <h2>Matriz</h2>
+        <div class="matriz" role="group" aria-label="Matriz de Poder e Interesse do Projeto Bilu">
+          <div class="matriz-eixo-y" style="grid-row: 1 / 3;">Poder baixo&nbsp;&nbsp;→&nbsp;&nbsp;Poder alto</div>
+
+          <div class="quadrante q-satisfeito" style="grid-row: 1; grid-column: 2;">
+            <h3>Manter satisfeito</h3>
+            <p class="quadrante-sub">Alto poder e baixo interesse</p>
+            <ul>
+              <li>OBA (organização da Olimpíada)</li>
+            </ul>
+          </div>
+
+          <div class="quadrante q-perto" style="grid-row: 1; grid-column: 3;">
+            <h3>Gerenciar de perto</h3>
+            <p class="quadrante-sub">Alto poder e alto interesse</p>
+            <ul>
+              <li>Profa. Dra. Violeta Sun (patrocinadora e avaliadora)</li>
+              <li>Luan Pereira Pinheiro (gerente do projeto)</li>
+              <li>Equipe de execução do Grupo Varginha</li>
+            </ul>
+          </div>
+
+          <div class="quadrante q-monitorar" style="grid-row: 2; grid-column: 2;">
+            <h3>Monitorar</h3>
+            <p class="quadrante-sub">Baixo poder e baixo interesse</p>
+            <ul>
+              <li>Provedores de infraestrutura (hospedagem e domínio)</li>
+              <li>Ferramentas externas (ex.: Scratch, do MIT)</li>
+            </ul>
+          </div>
+
+          <div class="quadrante q-informado" style="grid-row: 2; grid-column: 3;">
+            <h3>Manter informado</h3>
+            <p class="quadrante-sub">Baixo poder e alto interesse</p>
+            <ul>
+              <li>Estudantes do ensino básico (público-alvo)</li>
+              <li>Docentes de Ciências, Física e Matemática</li>
+            </ul>
+          </div>
+
+          <div class="matriz-eixo-x" style="grid-row: 3; grid-column: 2 / 4;">Interesse baixo&nbsp;&nbsp;→&nbsp;&nbsp;Interesse alto</div>
+        </div>
+
+        <h2>Justificativas</h2>
+        <div class="checklist-card">
+          <table class="checklist-table">
+            <thead>
+              <tr>
+                <th scope="col">Stakeholder</th>
+                <th scope="col">Quadrante</th>
+                <th scope="col">Justificativa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Profa. Dra. Violeta Sun</td>
+                <td><span class="tag-quadrante tag-perto">Gerenciar de perto</span></td>
+                <td>É a patrocinadora e avaliadora do projeto: valida as mudanças críticas de escopo e define os critérios de avaliação da disciplina. Acompanha cada marco e cada entrega, por isso tem poder e interesse altos.</td>
+              </tr>
+              <tr>
+                <td>Luan Pereira Pinheiro (gerente do projeto)</td>
+                <td><span class="tag-quadrante tag-perto">Gerenciar de perto</span></td>
+                <td>Centraliza a gestão e tem autonomia tática para redistribuir tarefas e aprovar mudanças dentro das tolerâncias. O resultado do projeto afeta diretamente a sua avaliação na disciplina.</td>
+              </tr>
+              <tr>
+                <td>Equipe de execução (Lucas, Luis, Sofia e Ygor)</td>
+                <td><span class="tag-quadrante tag-perto">Gerenciar de perto</span></td>
+                <td>Junto com o gerente, forma o Comitê Diretivo que avalia as solicitações de mudança, e controla o principal recurso do projeto (3 horas semanais por integrante). Também é avaliada pelo resultado, então o interesse é alto.</td>
+              </tr>
+              <tr>
+                <td>OBA (organização da Olimpíada)</td>
+                <td><span class="tag-quadrante tag-satisfeito">Manter satisfeito</span></td>
+                <td>O conteúdo programático e o banco de questões dos 4 níveis definem e limitam o escopo, e qualquer mudança no regulamento ou no calendário da Olimpíada obriga o projeto a se ajustar. A organização, porém, não participa nem depende do Bilu, por isso o interesse é baixo.</td>
+              </tr>
+              <tr>
+                <td>Estudantes do ensino básico</td>
+                <td><span class="tag-quadrante tag-informado">Manter informado</span></td>
+                <td>São o público-alvo e os maiores afetados pelos resultados, já que a plataforma existe para a sua preparação para a OBA. Influenciam a adoção, como indica o TAP, mas não decidem, não liberam recursos e não interferem no andamento do projeto.</td>
+              </tr>
+              <tr>
+                <td>Docentes de Ciências, Física e Matemática</td>
+                <td><span class="tag-quadrante tag-informado">Manter informado</span></td>
+                <td>Usam os guias de estudo e a curadoria de ferramentas para orientar os alunos, então são afetados diretamente pelo conteúdo. Dão feedback pelo canal da plataforma, mas não têm poder de decisão sobre o projeto.</td>
+              </tr>
+              <tr>
+                <td>Provedores de infraestrutura (hospedagem e domínio)</td>
+                <td><span class="tag-quadrante tag-monitorar">Monitorar</span></td>
+                <td>Fornecem serviços padronizados e gratuitos, que podem ser trocados com pouco esforço. Uma indisponibilidade afetaria o site no ar, mas o provedor não acompanha o projeto nem é afetado por ele, então basta monitorar.</td>
+              </tr>
+              <tr>
+                <td>Ferramentas externas (ex.: Scratch, do MIT)</td>
+                <td><span class="tag-quadrante tag-monitorar">Monitorar</span></td>
+                <td>Entram na curadoria como links de apoio. Uma mudança de acesso exigiria só atualizar a curadoria, e os mantenedores não sabem do projeto nem dependem dele.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-ghost" href="/entregas">Voltar para as entregas</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="brand-mark" aria-hidden="true">👽</span>
+      <p class="footer-quote">“Busquem conhecimento.”</p>
+      <p class="footer-meta">Projeto Bilu · Astronomia e astronáutica para a OBA</p>
+    </div>
+  </footer>
+
+  <!-- Opcional: reaproveita o céu estrelado da home (dois níveis) -->
+  <script src="../../script.js" defer></script>
+</body>
+</html>
