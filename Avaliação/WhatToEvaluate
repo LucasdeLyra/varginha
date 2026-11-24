@@ -1,0 +1,51 @@
+Como você avalia a entrega de cada grupo para a atividade proposta? *
+-Não atendeu às expectativas
+-Atendeu parcialmente
+-Atendeu adequadamente
+-Superou as expectativas
+-Não entregou no prazo
+-Não se aplica
+
+Qual foi o principal ponto forte da entrega? (Somente um)
+-Atendeu ao que foi solicitado
+-Aplicou adequadamente os conceitos apresentados
+-Justificou bem as decisões tomadas
+-Apresentou uma proposta viável
+-Não identifiquei um ponto forte específico
+-Não se aplica
+
+Qual aspecto mais precisa ser desenvolvido na entrega? *
+-Atendimento aos requisitos da atividade
+-Aplicação dos conceitos
+-Profundidade da análise
+-Justificativa das decisões
+-Clareza e organização
+-Viabilidade da proposta
+-Nenhum aspecto precisa de melhor
+
+
+Exemplo:
+
+10:
+Atendeu adequadamente
+Apresentou uma proposta viável
+Atendimento aos requisitos da atividade
+Pontos positivos:
+- Sucinto, objetivo, claro.
+Pontos de melhoria:
+- "Teste com 5 pessoas". Sugestão: especificar público
+- Inclua também o planejamento de revisões e auditorias e frequência de monitoramento, conforme solicitado.
+
+9:
+Atendeu adequadamente
+Atendeu ao que foi solicitado
+Profundidade da análise
+Pontos positivos:
+- Adicionou versão melhorada de prompt/agente de IA.
+Pontos de melhoria:
+- Validar sugestões de IA e remover "AI slop". Exemplo: "o PGQ supõe que lint/build sempre passam antes de cada deploy; isso é verdade para o site institucional (os deploys até agora funcionaram), mas ainda não foi testado para o código do MVP (mapa/carteira), que não existe ainda.", o PGQ do grupo exige esse tipo de validação, mas não supõe que sempre passam.
+
+8:
+Atendeu adequadamente
+Justificou bem as decisões tomadas
+Nenhum aspecto precisa de melhoria prioritária

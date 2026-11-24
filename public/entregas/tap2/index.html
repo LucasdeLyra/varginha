@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05060f" />
+  <meta name="description" content="TAP versão 2 — Termo de Abertura do Projeto Bilu atualizado com base nos documentos entregues ao longo da disciplina, com resumo da trajetória do projeto." />
+  <title>TAP v2 — Projeto Bilu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <!-- Dois níveis de profundidade: resolve para /styles.css -->
+  <link rel="stylesheet" href="../../styles.css" />
+  <style>
+    /* Estilos exclusivos desta entrega: tabelas do TAP e marcações de versão */
+    .tap-table { margin: 12px 0 8px; }
+    .tap-table th[scope="row"] {
+      width: 30%;
+      text-align: left;
+      color: var(--text);
+      font-weight: 600;
+      vertical-align: top;
+    }
+    .tap-table td { vertical-align: top; color: var(--text-dim); }
+    .tap-table td strong { color: var(--text); }
+    .tap-table ul { margin: 0; padding-left: 18px; }
+    .tap-table li { margin: 2px 0; }
+    .tabela-rolagem { overflow-x: auto; }
+    .tag {
+      display: inline-block;
+      padding: 1px 9px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      white-space: nowrap;
+      vertical-align: baseline;
+    }
+    .tag-novo { background: rgba(34, 211, 238, 0.15); color: #a5f3fc; }
+    .tag-alterado { background: rgba(124, 58, 237, 0.18); color: #c4b5fd; }
+    .tag-critico { background: rgba(239, 68, 68, 0.18); color: #fca5a5; }
+    .tag-alto { background: rgba(249, 115, 22, 0.18); color: #fdba74; }
+    .tag-medio { background: rgba(245, 158, 11, 0.14); color: #fcd34d; }
+    .fonte { font-size: 0.82rem; color: var(--text-dim); font-style: italic; }
+    .sumario-tap { columns: 2; column-gap: 32px; padding-left: 18px; }
+    .sumario-tap li { margin: 3px 0; break-inside: avoid; }
+    .entrega-conteudo h2 { scroll-margin-top: 90px; }
+    .legenda { display: flex; flex-wrap: wrap; gap: 10px 18px; margin: 8px 0 4px; color: var(--text-dim); font-size: 0.9rem; }
+    @media (max-width: 640px) {
+      .sumario-tap { columns: 1; }
+      .tap-table th[scope="row"] { width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Céu estrelado (opcional, consistência de tema; preenchido via JS, com fallback CSS) -->
+  <div class="starfield" id="starfield" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="/" aria-label="Bilu — página inicial">
+        <span class="brand-mark" aria-hidden="true">👽</span>
+        <span class="brand-name">Bilu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Início</a></li>
+        <li><a href="/entregas">Entregas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="section" id="entregavel">
+      <p class="section-label">ENTREGA · GRUPO VARGINHA</p>
+      <h1 class="section-title">TAP v2 — Termo de Abertura do Projeto</h1>
+      <p class="lead">
+        Segunda versão do Termo de Abertura do Projeto Bilu, atualizada com tudo o que foi
+        produzido ao longo da disciplina ACH2027. A estrutura segue o template da
+        <a href="/entregas/tap">primeira versão</a> (seções 0 a 13). No fim da página há o
+        resumo da trajetória do projeto.
+      </p>
+
+      <div class="entrega-conteudo">
+        <div class="callout-box">
+          <p class="callout-title"><span aria-hidden="true">🧭</span> Como ler este documento</p>
+          <p>
+            Cada informação foi tirada dos documentos entregues pelo grupo: TAP v1, Objetivos SMART e BMC,
+            Cronograma, Gestão de Recursos, Plano de Custos, Plano de Comunicações, Gestão de Risco,
+            PGQ, SOW e Matriz de Poder e Interesse. Quando os documentos discordam entre si, o TAP v2
+            adota o dado mais recente e registra a divergência.
+          </p>
+          <div class="legenda">
+            <span><span class="tag tag-novo">Novo</span> não existia na v1</span>
+            <span><span class="tag tag-alterado">Alterado</span> mudou em relação à v1</span>
+          </div>
+        </div>
+
+        <h2 id="sumario">Sumário</h2>
+        <ol class="sumario-tap" start="0">
+          <li><a href="#s0">Controle do Documento</a></li>
+          <li><a href="#s1">Identificação e Governança</a></li>
+          <li><a href="#s2">Princípios do PRINCE2</a></li>
+          <li><a href="#s3">Justificativa e Objetivos</a></li>
+          <li><a href="#s4">Integração e Partes Interessadas</a></li>
+          <li><a href="#s5">Gestão do Escopo</a></li>
+          <li><a href="#s6">Gestão do Tempo</a></li>
+          <li><a href="#s7">Gestão de Custos</a></li>
+          <li><a href="#s8">Gestão da Qualidade</a></li>
+          <li><a href="#s9">Gestão de Recursos</a></li>
+          <li><a href="#s10">Gestão das Comunicações</a></li>
+          <li><a href="#s11">Gestão de Riscos</a></li>
+          <li><a href="#s12">Gestão de Aquisições</a></li>
+          <li><a href="#s13">Critérios de Sucesso e Aceite</a></li>
+        </ol>
+        <p><a href="#resumo">Resumo da trajetória do projeto</a></p>
+
+        <!-- ============ 0 ============ -->
+        <h2 id="s0">0. Controle do Documento</h2>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table tap-table">
+            <tbody>
+              <tr><th scope="row">Nome do Projeto</th><td>Projeto Bilu (Plataforma Web Lúdica de Astronomia e OBA)</td></tr>
+              <tr><th scope="row">Grupo do Projeto</th><td>04 - Grupo Varginha</td></tr>
+              <tr><th scope="row">Versão</th><td><strong>2.0</strong> <span class="tag tag-alterado">Alterado</span> (v1.0 de 25/09/2026)</td></tr>
+              <tr><th scope="row">Data de Elaboração</th><td>23/11/2026</td></tr>
+              <tr><th scope="row">Elaborado por</th><td>Luan Pereira Pinheiro, Lucas de Lyra Monteiro, Luis Henrique Fernandes Ramires, Ygor Araujo da Silva</td></tr>
+              <tr><th scope="row">Alteração na equipe</th><td>Sofia Ferreira Leopoldo, integrante do grupo na v1, saiu do grupo. As atribuições dela (curadoria de conteúdo e QA) passaram para Ygor Araujo da Silva, com Luis Henrique Fernandes Ramires como segundo revisor. <span class="tag tag-novo">Novo</span></td></tr>
+              <tr><th scope="row">Documentos de base</th><td>TAP v1.0 (25/09), Objetivos SMART e BMC, Cronograma e Gestão de Recursos (08/10), Plano de Custos v1.0 (15/10), Plano de Comunicações (23/10), Gestão de Risco (05/11), PGQ v1.0 (11/11), SOW v1.0 (11/11) e Matriz de Poder e Interesse (20/11). <span class="tag tag-novo">Novo</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ============ 1 ============ -->
+        <h2 id="s1">1. Identificação e Governança do Projeto</h2>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table tap-table">
+            <tbody>
+              <tr><th scope="row">Patrocinador (Sponsor)</th><td>Profa. Dra. Violeta Sun, patrocinadora e avaliadora <span class="tag tag-alterado">Alterado</span><br /><span class="fonte">Na v1 o campo estava vazio, embora a seção 2 já a nomeasse. A Matriz de Poder e Interesse confirma o papel.</span></td></tr>
+              <tr><th scope="row">Área Solicitante</th><td>Disciplina de Gestão de Projetos de Tecnologia da Informação (ACH2027), EACH-USP</td></tr>
+              <tr><th scope="row">Gerente do Projeto</th><td>Luan Pereira Pinheiro</td></tr>
+              <tr><th scope="row">Comitê Diretivo / Board</th><td>Gerente do Projeto e equipe de execução (Lucas, Luis e Ygor). Decisões críticas são escaladas à patrocinadora.</td></tr>
+              <tr><th scope="row">Equipe do Projeto</th><td>
+                <ul>
+                  <li>Lucas de Lyra Monteiro: Dev Frontend / UI-UX</li>
+                  <li>Luis Henrique Fernandes Ramires: Dev Backend / Infraestrutura (líder de QA e infra no PGQ) e segundo revisor do conteúdo</li>
+                  <li>Ygor Araujo da Silva: Curadoria de conteúdo / QA (conteúdo e infra no PGQ e no SOW), incluindo a revisão pedagógica que era de Sofia</li>
+                </ul>
+                <span class="tag tag-novo">Novo</span> <span class="fonte">Papéis da Gestão de Recursos (08/10), ajustados pelo PGQ e pelo SOW (11/11) e redistribuídos após a saída de Sofia Ferreira Leopoldo.</span>
+              </td></tr>
+              <tr><th scope="row">Data de Início</th><td>04/09/2026</td></tr>
+              <tr><th scope="row">Data de Término do MVP</th><td>13/11/2026 (lançamento do MVP e marco M4 do SOW)</td></tr>
+              <tr><th scope="row">Encerramento do Projeto</th><td>Segunda semana de dezembro de 2026, com o fim da disciplina e a desmobilização da infraestrutura AWS <span class="tag tag-novo">Novo</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ============ 2 ============ -->
+        <h2 id="s2">2. Princípios do PRINCE2 Aplicados ao Projeto</h2>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table">
+            <thead><tr><th scope="col">Princípio</th><th scope="col">Aplicação no Projeto</th></tr></thead>
+            <tbody>
+              <tr><td>Justificativa Contínua de Negócio</td><td>O valor continua medido pelo impacto educacional de democratizar o conhecimento de astronomia e a preparação para a OBA. Na v2 também conta o custo: a migração para a AWS só se justifica com o teto de R$ 30,00 e o alerta do AWS Budgets ativo.</td></tr>
+              <tr><td>Aprender com a Experiência</td><td>Cada plano corrigiu dados do anterior. A Gestão de Risco revisou a probabilidade de atraso que a v1 dava como baixa, e o PGQ prevê retrospectivas de 15 minutos ao fim de cada marco. A instabilidade prevista no deploy do Cloudflare Workers levou ao SOW de migração para a AWS.</td></tr>
+              <tr><td>Papéis e Responsabilidades Definidos</td><td>Patrocinadora: Profa. Violeta Sun. Gerente: Luan. Equipe com papéis definidos na matriz RACI (Gestão de Recursos), em que cada atividade tem um único aprovador (o gerente), e responsáveis nominais por marco (SOW) e por item da checklist de qualidade (PGQ).</td></tr>
+              <tr><td>Gerenciamento por Estágios</td><td>Quatro estágios do cronograma: Iniciação e Planejamento, Curadoria e Design UI/UX, Desenvolvimento e Deploy, Qualidade e Lançamento. A eles se soma a migração para a AWS (marcos M1 a M4 do SOW, 12 e 13/11). O Comitê revisa o status a cada transição.</td></tr>
+              <tr><td>Gerenciamento por Exceção</td><td>Continuam como exceção, a ser escalada à patrocinadora, as ameaças ao prazo de 13/11, ao foco nos 4 níveis da OBA ou ao mínimo de 5 simulados. A v2 acrescenta: desvio de custo acima de ±30% (faixa vermelha do Plano de Custos), qualquer mudança com custo acima de R$ 30,00 (vetada pelo SOW) e os gatilhos datados do risco R1 (menos de 5 simulados publicados em 11/11).</td></tr>
+              <tr><td>Foco em Produtos</td><td>Os produtos foram detalhados com critérios de aceite verificáveis: aceite dos marcos M1 a M4 (SOW), objetivos de qualidade QO-01 a QO-06 e checklist CK-01 a CK-09 (PGQ).</td></tr>
+              <tr><td>Adaptação ao Ambiente do Projeto</td><td>O PGQ exclui explicitamente o <em>over-engineering</em>: testes de carga acima de 100 usuários simultâneos, certificações ISO, SLA de 99,999% e cobertura artificial de 100% de testes. O Plano de Custos usa abordagem híbrida, preditiva nos marcos e ágil nas iterações.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ============ 3 ============ -->
+        <h2 id="s3">3. Justificativa e Objetivos (Business Case)</h2>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table tap-table">
+            <tbody>
+              <tr><th scope="row">Justificativa / Business Case</th><td>Necessidade de democratizar o acesso ao conhecimento científico de astronomia e astronáutica e de apoiar a preparação para a OBA, estimulando o aprendizado autônomo de alunos do ensino básico. A OBA é uma das principais iniciativas de estímulo ao pensamento científico no Brasil e uma via de ingresso em universidades como a Unicamp, que reserva vagas a medalhistas.</td></tr>
+              <tr><th scope="row">Objetivos do Projeto (SMART)</th><td>
+                <ul>
+                  <li><strong>Específico:</strong> desenvolver e publicar uma plataforma digital dinâmica e gamificada para o ensino de astronomia e a preparação para a OBA.</li>
+                  <li><strong>Mensurável:</strong> disponibilizar no mínimo 5 simulados resolvidos e listas de exercícios categorizadas pelos 4 níveis da OBA, além de um repositório mínimo de ferramentas (ex.: Scratch, do MIT).</li>
+                  <li><strong>Atingível:</strong> com a capacidade atual da equipe, de 14 h/semana no total (19 h antes da saída de Sofia) <span class="tag tag-alterado">Alterado</span>.</li>
+                  <li><strong>Relevante:</strong> aumentar a participação e o desempenho de escolas públicas e privadas na OBA.</li>
+                  <li><strong>Temporal:</strong> lançar o MVP até 13/11/2026.</li>
+                </ul>
+              </td></tr>
+              <tr><th scope="row">Benefícios Esperados</th><td>
+                <ul>
+                  <li>Democratizar o acesso ao conhecimento científico sobre astronomia e astronáutica.</li>
+                  <li>Aumentar a participação e o desempenho das escolas na OBA.</li>
+                  <li>Aproximar o público infantojuvenil do conhecimento acadêmico de forma acessível e convidativa ("Busquem conhecimento").</li>
+                </ul>
+              </td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ============ 4 ============ -->
+        <h2 id="s4">4. Gestão da Integração e Partes Interessadas</h2>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table tap-table">
+            <tbody>
+              <tr><th scope="row">Interdependências</th><td>
+                <ul>
+                  <li><strong>OBA:</strong> o conteúdo programático e o banco de questões dos 4 níveis definem e limitam o escopo.</li>
+                  <li><strong>Disciplina ACH2027:</strong> cronograma atrelado ao calendário acadêmico e aos critérios de avaliação.</li>
+                  <li><strong>Provedores de nuvem</strong> <span class="tag tag-novo">Novo</span>: Cloudflare Workers (ambiente temporário) e AWS (S3, CloudFront, Route 53, ACM, Budgets), além do GitHub (repositório e GitHub Actions).</li>
+                </ul>
+              </td></tr>
+              <tr><th scope="row">Premissas</th><td>
+                <ul>
+                  <li>A equipe dedica 14 h/semana no total: Luan 3h, Lucas 5h, Luis 3h e Ygor 3h <span class="tag tag-alterado">Alterado</span> (v1: 3 h por integrante; a Gestão de Recursos previa 19 h, com as 5 h de Sofia).</li>
+                  <li>Os docentes usarão a plataforma para encontrar suporte e complementar suas aulas.</li>
+                  <li>O volume de acesso do MVP (50 a 100 usuários/mês) cabe na camada gratuita da AWS <span class="tag tag-novo">Novo</span>.</li>
+                  <li>O site é estático e não coleta dados pessoais, o que atende à LGPD por ausência de dados de menores <span class="tag tag-novo">Novo</span>.</li>
+                </ul>
+              </td></tr>
+              <tr><th scope="row">Restrições Gerais</th><td>Entrega restrita a um MVP até 13/11/2026; orçamento máximo de R$ 30,00 no ciclo da disciplina; somente recursos gratuitos, exceto a zona DNS do Route 53.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Partes interessadas <span class="tag tag-alterado">Alterado</span></h3>
+        <p class="fonte">A v1 listava só estudantes e docentes. A lista abaixo segue a Matriz de Poder e Interesse (20/11/2026).</p>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table">
+            <thead><tr><th scope="col">Nome</th><th scope="col">Papel / Cargo</th><th scope="col">Quadrante (Poder × Interesse)</th><th scope="col">Expectativas</th></tr></thead>
+            <tbody>
+              <tr><td>Profa. Dra. Violeta Sun</td><td>Patrocinadora e avaliadora</td><td>Gerenciar de perto</td><td>Entregas dentro dos critérios da disciplina, com status por marco</td></tr>
+              <tr><td>Luan Pereira Pinheiro</td><td>Gerente do projeto</td><td>Gerenciar de perto</td><td>MVP no prazo, dentro das tolerâncias de custo e escopo</td></tr>
+              <tr><td>Equipe de execução (Lucas, Luis, Ygor)</td><td>Execução e Comitê Diretivo</td><td>Gerenciar de perto</td><td>Tarefas claras, prazos visíveis e decisões registradas</td></tr>
+              <tr><td>OBA (organização da Olimpíada)</td><td>Fonte do conteúdo programático e do banco de questões</td><td>Manter satisfeito</td><td>Uso fiel ao conteúdo oficial (condições de reuso ainda não verificadas, ver R6)</td></tr>
+              <tr><td>Estudantes do ensino básico</td><td>Público-alvo / usuários</td><td>Manter informado</td><td>Plataforma gamificada e interativa, com simulados e estudo autônomo</td></tr>
+              <tr><td>Docentes de Ciências, Física e Matemática</td><td>Parceiros / usuários</td><td>Manter informado</td><td>Guias de estudo e ferramentas para orientar os alunos</td></tr>
+              <tr><td>Provedores de infraestrutura (Cloudflare, AWS)</td><td>Hospedagem e domínio</td><td>Monitorar</td><td>Uso dentro dos termos e da camada gratuita</td></tr>
+              <tr><td>Ferramentas externas (ex.: Scratch, do MIT)</td><td>Itens da curadoria</td><td>Monitorar</td><td>Links atualizados na curadoria</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ============ 5 ============ -->
+        <h2 id="s5">5. Gestão do Escopo</h2>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table tap-table">
+            <tbody>
+              <tr><th scope="row">Dentro do Escopo</th><td>
+                <ul>
+                  <li>Plataforma digital gamificada, estática e responsiva (HTML5/CSS3/JS).</li>
+                  <li>Pelo menos 5 simulados resolvidos e listas de exercícios dos níveis 1 a 4 da OBA.</li>
+                  <li>Guias de estudo para professores e curadoria de ferramentas (ex.: Scratch).</li>
+                  <li>Infraestrutura de hospedagem na AWS: S3, CloudFront com OAC, ACM, Route 53, IAM, AWS Budgets e CI/CD via GitHub Actions <span class="tag tag-novo">Novo</span>.</li>
+                </ul>
+              </td></tr>
+              <tr><th scope="row">Fora do Escopo</th><td>
+                <ul>
+                  <li>Correção individual de exercícios e mentoria individualizada.</li>
+                  <li>Banco de dados, APIs serverless e salvamento de progresso do aluno <span class="tag tag-novo">Novo</span> (SOW e Gestão de Risco).</li>
+                  <li>Suporte técnico direto aos usuários finais <span class="tag tag-novo">Novo</span>.</li>
+                  <li>Testes de carga acima de 100 usuários simultâneos, certificações ISO, auditoria externa de segurança e SLA de 99,999% <span class="tag tag-novo">Novo</span> (PGQ).</li>
+                </ul>
+              </td></tr>
+              <tr><th scope="row">Restrição de Escopo</th><td>Materiais estritamente focados nos conteúdos programáticos oficiais dos 4 níveis da OBA. Ordem de corte acordada para falta de capacidade: <strong>gamificação e guias saem antes de simulados e listas</strong> <span class="tag tag-novo">Novo</span> (resposta ao risco R4).</td></tr>
+              <tr><th scope="row">Estratégia de Controle de Mudanças</th><td>
+                <ol>
+                  <li>Registrar a solicitação (Gerente do Projeto).</li>
+                  <li>Analisar o impacto em prazo, custo e capacidade de 14 h/semana (Gerente e equipe técnica).</li>
+                  <li>Decidir pela faixa de desvio: até ±30% decide o Gerente; acima disso, ou se afetar os critérios da disciplina, escala à patrocinadora. Mudança com custo acima de R$ 30,00 é vetada (SOW).</li>
+                  <li>Atualizar a linha de base, o log de mudanças e os artefatos afetados (TAP, cronograma), com registro em ata.</li>
+                </ol>
+                <span class="tag tag-alterado">Alterado</span> <span class="fonte">Combina a v1, o Plano de Custos (seção 10), o SOW (seção 10) e o Plano de Comunicações (seção 5).</span>
+              </td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Entregáveis</h3>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table">
+            <thead><tr><th scope="col">Entregável</th><th scope="col">Descrição</th><th scope="col">Responsável</th><th scope="col">Data Prevista</th></tr></thead>
+            <tbody>
+              <tr><td>Versão MVP da Plataforma</td><td>Site no ar com acervo básico, 5 simulados e listas dos 4 níveis</td><td>Grupo Varginha (aprovação: Luan)</td><td>13/11/2026</td></tr>
+              <tr><td>Repositório e Guias</td><td>Guias para professores e curadoria de ferramentas (ex.: Scratch)</td><td>Ygor (curadoria) e Luis (revisão)</td><td>13/11/2026</td></tr>
+              <tr><td>M1: S3 + CloudFront (OAC) <span class="tag tag-novo">Novo</span></td><td>Homologação acessível pela URL *.cloudfront.net</td><td>Luis e Ygor</td><td>12/11/2026</td></tr>
+              <tr><td>M2: ACM + Route 53 <span class="tag tag-novo">Novo</span></td><td>Domínio oficial com certificado TLS válido</td><td>Luis e Ygor</td><td>12/11/2026</td></tr>
+              <tr><td>M3: CI/CD GitHub Actions <span class="tag tag-novo">Novo</span></td><td>Deploy automático no S3 e invalidação do cache em até 5 min</td><td>Luis e Ygor</td><td>13/11/2026</td></tr>
+              <tr><td>M4: Homologação e produção <span class="tag tag-novo">Novo</span></td><td>Navegação ponta a ponta dos 5 simulados sem erros 4xx/5xx</td><td>Luan e Lucas</td><td>13/11/2026</td></tr>
+              <tr><td>Documentação de gestão <span class="tag tag-novo">Novo</span></td><td>Planos e artefatos da disciplina publicados na página de <a href="/entregas">Entregas</a></td><td>Grupo Varginha</td><td>Conforme calendário da disciplina</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ============ 6 ============ -->
+        <h2 id="s6">6. Gestão do Tempo (Cronograma)</h2>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table tap-table">
+            <tbody>
+              <tr><th scope="row">Período</th><td>04/09/2026 a 13/11/2026 (MVP, 10 semanas); encerramento na 2ª semana de dezembro de 2026</td></tr>
+              <tr><th scope="row">Restrição de Prazo</th><td>MVP impreterivelmente até 13/11/2026, prazo inegociável por ser critério de avaliação da disciplina.</td></tr>
+              <tr><th scope="row">Estratégia de Estágios</th><td>
+                <ul>
+                  <li><strong>Iniciação e Planejamento</strong> (04/09 a 25/09): requisitos, arquitetura, TAP e BMC.</li>
+                  <li><strong>Curadoria e Design UI/UX</strong> (26/09 a 16/10): banco de questões dos níveis 1 a 4, guias, repositório Scratch e design da interface.</li>
+                  <li><strong>Desenvolvimento e Deploy</strong> (06/10 a 30/10): frontend gamificado, simulados, infraestrutura e versão beta.</li>
+                  <li><strong>Qualidade e Lançamento</strong> (31/10 a 13/11): testes, validação pedagógica, revisão de gabaritos, homologação e migração para a AWS.</li>
+                </ul>
+              </td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table">
+            <thead><tr><th scope="col">Data</th><th scope="col">Marco</th><th scope="col">Observações</th></tr></thead>
+            <tbody>
+              <tr><td>04/09/2026</td><td>Início Oficial do Projeto</td><td>Abertura dos trabalhos e definição dos Objetivos SMART.</td></tr>
+              <tr><td>25/09/2026</td><td>Planejamento Estratégico Aprovado</td><td>BMC e TAP v1.</td></tr>
+              <tr><td>16/10/2026</td><td>Curadoria de Conteúdo Concluída</td><td>Banco de questões dos níveis 1 a 4 e guias.</td></tr>
+              <tr><td>30/10/2026</td><td>Plataforma Beta no Ar</td><td>Site estático no Cloudflare Workers.</td></tr>
+              <tr><td>06/11/2026 <span class="tag tag-novo">Novo</span></td><td>Congelamento do escopo mínimo</td><td>Resposta proposta ao risco R1: 5 simulados e listas dos 4 níveis em páginas estáticas.</td></tr>
+              <tr><td>12/11/2026 <span class="tag tag-novo">Novo</span></td><td>M1 e M2 (AWS)</td><td>S3, CloudFront, ACM e Route 53.</td></tr>
+              <tr><td>13/11/2026</td><td>M3, M4 e Lançamento do MVP</td><td>CI/CD, homologação e publicação definitiva.</td></tr>
+              <tr><td>2ª sem. dez/2026 <span class="tag tag-novo">Novo</span></td><td>Encerramento</td><td>Fim da disciplina. Sem instituição mantenedora, a equipe faz backup no GitHub, apaga os buckets e encerra a Hosted Zone.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ============ 7 ============ -->
+        <h2 id="s7">7. Gestão de Custos</h2>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table tap-table">
+            <tbody>
+              <tr><th scope="row">Restrição de Orçamento</th><td>Teto de <strong>R$ 30,00</strong> no ciclo da disciplina <span class="tag tag-alterado">Alterado</span> (v1: custo zero). Mudanças acima desse valor são vetadas.</td></tr>
+              <tr><th scope="row">Estratégia de Controle de Custos</th><td>Gerenciamento do valor agregado (PV, EV, AC, CPI, SPI), medido por fase e marco, com relatório ao fim de cada sprint em Google Sheets, que é a fonte oficial dos números. Faixas de desvio (CV ÷ EV): até ±15% verde, de ±15% a ±30% amarelo, acima de ±30% vermelho. Alerta do AWS Budgets em US$ 1,00. Previsão mensal por EAC = BAC ÷ CPI e EAC = AC + (BAC − EV) ÷ (CPI × SPI). <span class="tag tag-novo">Novo</span></td></tr>
+              <tr><th scope="row">Reservas</th><td>Contingência para riscos mapeados (ex.: limites do Free Tier) e reserva de gerenciamento de 5% sobre a linha de base. Ambas são aprovadas pelo Gerente do Projeto. <span class="tag tag-novo">Novo</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table">
+            <thead><tr><th scope="col">Categoria</th><th scope="col">Descrição</th><th scope="col">Valor Estimado (R$)</th></tr></thead>
+            <tbody>
+              <tr><td>Pessoal</td><td>Desenvolvimento interno pelo Grupo Varginha (trabalho acadêmico, 14 h/semana)</td><td>R$ 0,00</td></tr>
+              <tr><td>Infraestrutura (S3, CloudFront, ACM)</td><td>Dentro da camada gratuita da AWS (menos de 500 MB e de 10 GB de tráfego)</td><td>R$ 0,00</td></tr>
+              <tr><td>DNS (Route 53)</td><td>1 Hosted Zone (US$ 0,50/mês) <span class="tag tag-novo">Novo</span></td><td>~R$ 2,75/mês</td></tr>
+              <tr><td>Aquisições / Contratos</td><td>Domínio próprio</td><td>Não estimado</td></tr>
+              <tr><td><strong>Investimento Total</strong></td><td>Teto aprovado</td><td><strong>até R$ 30,00</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ============ 8 ============ -->
+        <h2 id="s8">8. Gestão da Qualidade</h2>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table tap-table">
+            <tbody>
+              <tr><th scope="row">Restrição de Qualidade</th><td>Garantir a exatidão dos gabaritos e resoluções da OBA e uma plataforma gamificada, responsiva, segura (somente HTTPS) e dentro do orçamento.</td></tr>
+              <tr><th scope="row">Padrões e Normas Aplicáveis</th><td>
+                PMBOK 8ª ed.; IEEE 730 (SQAP) e ISO/IEC 25010; AWS Well-Architected Framework; OWASP Top 10; WCAG 2.1 nível AA; LGPD (Lei 13.709/2018); W3C HTML5, CSS Lint e Clean Code; conteúdo programático oficial dos níveis 1 a 4 da OBA. <span class="tag tag-alterado">Alterado</span>
+              </td></tr>
+              <tr><th scope="row">Objetivos de Qualidade</th><td>
+                <ul>
+                  <li><strong>QO-01 Adequação funcional:</strong> 100% das regras de simulados validadas.</li>
+                  <li><strong>QO-02 Segurança:</strong> 0 segredos no Git e 100% do tráfego em HTTPS.</li>
+                  <li><strong>QO-03 Desempenho:</strong> FCP abaixo de 2,0 s no desktop e no celular.</li>
+                  <li><strong>QO-04 Usabilidade e acessibilidade:</strong> checklist WCAG 2.1 AA sem barreiras.</li>
+                  <li><strong>QO-05 Manutenibilidade:</strong> 100% dos PRs integrados via CI/CD.</li>
+                  <li><strong>QO-06 Orçamento:</strong> gasto entre R$ 0,00 e R$ 30,00.</li>
+                </ul>
+              </td></tr>
+              <tr><th scope="row">Método de Verificação e Validação</th><td>
+                QA preventivo: revisão dos gabaritos contra fontes oficiais, com dupla conferência e planilha de revisor e resultado (resposta ao R2); revisão da arquitetura AWS; padronização de commits e secrets. QC: roteiro manual de testes funcionais, SSL Labs e cURL, Lighthouse/PageSpeed e AXE DevTools. Não conformidades são registradas em Issues do GitHub.
+              </td></tr>
+              <tr><th scope="row">Responsável pela Qualidade</th><td>Luan (aprova o PGQ e os aceites), Luis (líder de QA e infra), Lucas (front e UX), Ygor (acurácia dos simulados e CI/CD). Avaliação final: Profa. Violeta Sun.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ============ 9 ============ -->
+        <h2 id="s9">9. Gestão de Recursos</h2>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table">
+            <thead><tr><th scope="col">Integrante</th><th scope="col">Função</th><th scope="col">Competência principal</th><th scope="col">Horas/semana</th></tr></thead>
+            <tbody>
+              <tr><td>Luan Pereira Pinheiro</td><td>Gerente do Projeto</td><td>Gestão de projetos e liderança</td><td>3h</td></tr>
+              <tr><td>Lucas de Lyra Monteiro</td><td>Dev Frontend / UI</td><td>Design UI/UX e web frontend</td><td>5h</td></tr>
+              <tr><td>Luis Henrique Fernandes Ramires</td><td>Dev Backend / Infra e segundo revisor do conteúdo</td><td>Arquitetura serverless e hosting</td><td>3h</td></tr>
+              <tr><td>Ygor Araujo da Silva</td><td>Curador de conteúdo / QA</td><td>Curadoria de materiais, Scratch e revisão pedagógica OBA</td><td>3h</td></tr>
+              <tr><td><strong>Total</strong></td><td colspan="2">4 integrantes, 10 semanas</td><td><strong>14h</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table tap-table">
+            <tbody>
+              <tr><th scope="row">Restrição de Recursos</th><td>14 h/semana no total <span class="tag tag-alterado">Alterado</span> (v1: 3 h/semana por integrante, 15 h; Gestão de Recursos: 19 h). A saída de Sofia Ferreira Leopoldo retirou 5 h/semana, cerca de 26% da capacidade planejada, e a capacidade fica pressionada no fim do semestre (risco R4).</td></tr>
+              <tr><th scope="row">Matriz RACI</th><td>O Gerente aprova (A) todas as atividades principais: requisitos e arquitetura, plataforma e simulados, curadoria do banco de questões e guias, testes e QA, implantação e lançamento. Cada atividade tem um único aprovador. <span class="tag tag-novo">Novo</span></td></tr>
+              <tr><th scope="row">Recursos Materiais e Tecnológicos</th><td>Repositório GitHub, ambiente de desenvolvimento web, Cloudflare Workers (temporário), serviços AWS, Google Drive e Google Sheets, ferramentas de teste (Lighthouse, AXE, SSL Labs), banco de questões da OBA e Scratch.</td></tr>
+              <tr><th scope="row">Estratégia de Aquisição de Recursos</th><td>Recursos externos mapeados e adotados ao longo do desenvolvimento, preferindo planos gratuitos. Infraestrutura definitiva na AWS conforme o SOW. Em caso de indisponibilidade de integrante, há redistribuição de tarefas com titular e suplente por tarefa.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ============ 10 ============ -->
+        <h2 id="s10">10. Gestão das Comunicações</h2>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table">
+            <thead><tr><th scope="col">Informação</th><th scope="col">Público-Alvo</th><th scope="col">Frequência</th><th scope="col">Canal</th><th scope="col">Responsável</th></tr></thead>
+            <tbody>
+              <tr><td>Status report <span class="tag tag-novo">Novo</span></td><td>Professora e grupo</td><td>Quinzenal</td><td>E-mail / Teams / Drive (PDF)</td><td>Gerente do Projeto</td></tr>
+              <tr><td>Dúvidas e bloqueios <span class="tag tag-novo">Novo</span></td><td>Time do projeto</td><td>Sob demanda</td><td>Chat do grupo</td><td>Quem encontrou o bloqueio</td></tr>
+              <tr><td>Registro de decisões <span class="tag tag-novo">Novo</span></td><td>Equipe</td><td>Após cada decisão</td><td>Ata no Drive</td><td>Relator rotativo</td></tr>
+              <tr><td>Revisão e publicação <span class="tag tag-novo">Novo</span></td><td>Equipe e docente</td><td>Por entrega</td><td>Drive / página de Entregas do Bilu</td><td>Responsável pela entrega e revisor</td></tr>
+              <tr><td>Atualização do cronograma <span class="tag tag-novo">Novo</span></td><td>Equipe</td><td>Semanal ou a cada mudança</td><td>Cronograma / mensagens</td><td>Gerente do Projeto</td></tr>
+              <tr><td>Coleta de feedback operacional e pedagógico</td><td>Estudantes e docentes</td><td>Contínua, após o MVP</td><td>Canal integrado à plataforma</td><td>Grupo Varginha</td></tr>
+              <tr><td>Divulgação e engajamento</td><td>Estudantes e docentes orientadores</td><td>Ad-hoc, com pico no lançamento</td><td>Comunidades educacionais e redes sociais</td><td>Grupo Varginha</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          <strong>Ritos:</strong> reunião semanal de 30 a 45 minutos, atualizações assíncronas durante a semana e reuniões
+          extras curtas antes das entregas ou em bloqueios. Decisões que alteram escopo, prazo ou responsabilidade
+          são tomadas em reunião e registradas em ata. Avisos críticos exigem confirmação explícita de leitura.
+          Detalhes no <a href="/entregas/comunica%C3%A7%C3%A3o">Plano de Gerenciamento das Comunicações</a>.
+        </p>
+
+        <!-- ============ 11 ============ -->
+        <h2 id="s11">11. Gestão de Riscos</h2>
+        <p class="fonte">Riscos da etapa de Qualidade e Lançamento (Gestão de Risco, 05/11/2026), mais os riscos de infraestrutura do SOW e do PGQ. Nível = probabilidade × impacto (1–4 baixo, 5–9 médio, 10–15 alto, 16–25 crítico).</p>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table">
+            <thead><tr><th scope="col">Risco</th><th scope="col">Nível</th><th scope="col">Categoria</th><th scope="col">Resposta / Mitigação</th></tr></thead>
+            <tbody>
+              <tr><td>R1 MVP incompleto em 13/11</td><td><span class="tag tag-critico">20 crítico</span></td><td>Escopo / Prazo</td><td>Mitigar: congelar o escopo mínimo em 06/11. Contingência: com aval da docente, publicar simulados como PDF navegável. Gatilho: menos de 5 simulados em 11/11. Resp.: Luan.</td></tr>
+              <tr><td>R4 Integrante indisponível na janela final</td><td><span class="tag tag-critico">16 crítico</span></td><td>Recursos</td><td>Mitigar: titular e suplente por tarefa e atualização diária assíncrona, com ordem de corte combinada. Gatilho: menos de 15 h confirmadas em 09/11. O risco se concretizou com a saída de Sofia, e as tarefas dela foram redistribuídas para Ygor e Luis. Resp.: Luan.</td></tr>
+              <tr><td>R2 Gabarito ou resolução incorreta</td><td><span class="tag tag-alto">12 alto</span></td><td>Qualidade</td><td>Mitigar: dupla conferência contra o gabarito oficial. Evitar: publicar só questões conferidas. Gatilho: menos de 50% conferidas em 10/11. Resp.: Ygor e Luis.</td></tr>
+              <tr><td>R3 Defeito em dispositivos não testados</td><td><span class="tag tag-medio">9 médio</span></td><td>Qualidade</td><td>Testes de responsividade em celular e desktop (CK-06).</td></tr>
+              <tr><td>R8 Divergência de expectativas com a docente</td><td><span class="tag tag-medio">9 médio</span></td><td>Partes interessadas</td><td>Validação periódica de entregas intermediárias e critérios de aceite detalhados por item (seção 13).</td></tr>
+              <tr><td>R5 Sem teste com o público infantojuvenil</td><td><span class="tag tag-medio">8 médio</span></td><td>Qualidade</td><td>Aceito no MVP, pois não é critério de aceite.</td></tr>
+              <tr><td>R7 Defeito após publicação</td><td><span class="tag tag-medio">8 médio</span></td><td>Implantação</td><td>Roteiro de verificação em produção, reversão de versão e invalidação de cache automática no CI/CD.</td></tr>
+              <tr><td>R6 Reuso das provas da OBA</td><td>Não calculado</td><td>Legal</td><td>Faltam dados sobre as condições de reuso. Indicar a fonte oficial em cada questão.</td></tr>
+              <tr><td>Cobrança indevida na AWS <span class="tag tag-novo">Novo</span></td><td>Não pontuado</td><td>Custos</td><td>AWS Budgets com alerta em US$ 1,00 e encerramento da Hosted Zone ao fim da disciplina.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table tap-table">
+            <tbody>
+              <tr><th scope="row">Tolerância a Riscos</th><td>Alta, como definido na v1. A Gestão de Risco, porém, reclassificou o atraso de cronograma de baixo para crítico (R1 e R4), e as regras de exceção da seção 2 tratam prazo e critérios mínimos do MVP como inegociáveis.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ============ 12 ============ -->
+        <h2 id="s12">12. Gestão de Aquisições do Projeto</h2>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table tap-table">
+            <tbody>
+              <tr><th scope="row">Itens a Adquirir</th><td>Serviços AWS (S3, CloudFront, ACM, Route 53, IAM, Budgets) <span class="tag tag-novo">Novo</span>; registro de domínio; ferramentas de desenvolvimento e design UI/UX.</td></tr>
+              <tr><th scope="row">Estratégia de Contratação</th><td>Fornecedores escolhidos pela camada gratuita. A hospedagem definitiva é formalizada no <a href="/entregas/statement%20of%20work">SOW v1.0</a> (migração Workers → AWS), com escopo, critérios de aceite por marco, SLA de 99,9% e plano de encerramento. <span class="tag tag-alterado">Alterado</span></td></tr>
+              <tr><th scope="row">Principais Fornecedores/Parceiros</th><td>Amazon Web Services, Cloudflare (ambiente temporário), GitHub, Google (Drive e Sheets).</td></tr>
+              <tr><th scope="row">Restrições Contratuais</th><td>Somente camada gratuita, exceto a zona DNS. Custo total até R$ 30,00. Pagamento por débito mensal no cartão da conta AWS.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ============ 13 ============ -->
+        <h2 id="s13">13. Critérios de Sucesso e Aceite</h2>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table tap-table">
+            <tbody>
+              <tr><th scope="row">Critérios de Sucesso</th><td>
+                <ul>
+                  <li>Listas de exercícios integralmente categorizadas nos níveis 1, 2, 3 e 4 da OBA.</li>
+                  <li>No mínimo 5 simulados resolvidos, com gabaritos conferidos contra a fonte oficial.</li>
+                  <li>Repositório mínimo com ferramentas curadas (ex.: Scratch) e guias de apoio aos educadores.</li>
+                  <li>MVP publicado até 13/11/2026 com custo total até R$ 30,00.</li>
+                </ul>
+              </td></tr>
+              <tr><th scope="row">Critérios de Aceite <span class="tag tag-novo">Novo</span></th><td>
+                <ul>
+                  <li>Navegação ponta a ponta dos 5 simulados sem erros HTTP 4xx/5xx (M4).</li>
+                  <li>0 defeitos críticos ou altos e no máximo 2 médios com plano de correção (PGQ, seção 7).</li>
+                  <li>100% do tráfego em HTTPS com certificado válido; bucket S3 privado via OAC.</li>
+                  <li>Lighthouse acima de 85 em desempenho e acessibilidade; FCP abaixo de 2,0 s.</li>
+                  <li>Deploy automático com invalidação de cache em até 5 minutos (M3).</li>
+                  <li>Checklist CK-01 a CK-09 preenchida e aceite formal assinado pelo Gerente do Projeto.</li>
+                  <li>Avaliação final da patrocinadora, Profa. Violeta Sun.</li>
+                </ul>
+              </td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ============ RESUMO ============ -->
+        <h2 id="resumo">Resumo da trajetória do projeto</h2>
+
+        <h3>O que mudou da primeira para a segunda versão</h3>
+        <div class="checklist-card tabela-rolagem">
+          <table class="checklist-table">
+            <thead><tr><th scope="col">Tema</th><th scope="col">TAP v1 (25/09)</th><th scope="col">TAP v2 (23/11)</th><th scope="col">Origem</th></tr></thead>
+            <tbody>
+              <tr><td>Patrocinadora</td><td>Campo vazio</td><td>Profa. Violeta Sun</td><td>Matriz de Stakeholders</td></tr>
+              <tr><td>Capacidade</td><td>3 h/semana por integrante (15 h)</td><td>14 h/semana com horas por pessoa (19 h antes da saída de Sofia)</td><td>Gestão de Recursos</td></tr>
+              <tr><td>Equipe</td><td>5 integrantes</td><td>4 integrantes, após a saída de Sofia Ferreira Leopoldo</td><td>Grupo</td></tr>
+              <tr><td>Papéis</td><td>"Equipe" genérica</td><td>Funções, RACI e responsáveis por marco</td><td>Recursos, PGQ, SOW</td></tr>
+              <tr><td>Hospedagem</td><td>Cloudflare Workers</td><td>AWS (S3 + CloudFront + Route 53 + ACM) com CI/CD</td><td>SOW</td></tr>
+              <tr><td>Orçamento</td><td>R$ 0,00</td><td>Até R$ 30,00 (Route 53 ~R$ 2,75/mês) e controle por EVM</td><td>SOW, Plano de Custos</td></tr>
+              <tr><td>Qualidade</td><td>"Revisão e testes de uso"</td><td>ISO 25010, WCAG 2.1 AA, OWASP, LGPD; metas e checklist</td><td>PGQ</td></tr>
+              <tr><td>Riscos</td><td>2 riscos; atraso com probabilidade baixa</td><td>8 riscos pontuados; atraso passa a crítico</td><td>Gestão de Risco</td></tr>
+              <tr><td>Stakeholders</td><td>Estudantes e docentes</td><td>8 partes em matriz de poder e interesse</td><td>Matriz de Stakeholders</td></tr>
+              <tr><td>Comunicações</td><td>2 fluxos externos</td><td>Status quinzenal, atas, ritos e confirmação de leitura</td><td>Plano de Comunicações</td></tr>
+              <tr><td>Aceite</td><td>Critérios de sucesso gerais</td><td>Critérios de aceite mensuráveis por marco</td><td>PGQ, SOW</td></tr>
+              <tr><td>Encerramento</td><td>Não previsto</td><td>Desmobilização da infraestrutura em dezembro</td><td>SOW</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Principais mudanças ao longo do desenvolvimento</h3>
+        <ul>
+          <li><strong>Setembro (abertura):</strong> o projeto começou com Objetivos SMART, BMC e TAP v1, com escopo voltado à OBA, custo zero e entrega do MVP em 13/11.</li>
+          <li><strong>Outubro (planejamento detalhado):</strong> o cronograma organizou o trabalho em 4 estágios. A Gestão de Recursos trocou a premissa de 3 h por pessoa por um plano de capacidade real de 19 h/semana e criou a RACI. O Plano de Custos adotou valor agregado e faixas de desvio, e o Plano de Comunicações definiu ritos e registro de decisões.</li>
+          <li><strong>Início de novembro (choque de realidade):</strong> a Gestão de Risco comparou o plano com o repositório e viu que, a 8 dias do prazo, ainda não havia simulados publicados. O atraso, antes risco baixo, virou o risco mais grave (R1), e o grupo definiu uma ordem de corte: gamificação e guias saem antes de simulados e listas.</li>
+          <li><strong>Meados de novembro (infraestrutura e qualidade):</strong> o SOW formalizou a migração do Cloudflare Workers para a AWS, com teto de R$ 30,00, e o PGQ estabeleceu padrões, metas e a checklist de liberação. A Matriz de Poder e Interesse fechou o mapa de partes interessadas.</li>
+          <li><strong>Mudança na equipe:</strong> Sofia Ferreira Leopoldo saiu do grupo. A equipe passou a 4 integrantes e 14 h/semana, e a curadoria de conteúdo e a revisão de gabaritos passaram para Ygor, com Luis como segundo revisor.</li>
+        </ul>
+
+        <h3>Como a IA apoiou a gestão do projeto</h3>
+        <ul>
+          <li><strong>Elaboração de planos:</strong> os planos de Recursos e Comunicações foram preenchidos com prompts de "analista de projetos de TI", e as saídas ficaram marcadas como "sugestão a validar".</li>
+          <li><strong>Gestão de riscos:</strong> o grupo usou o Claude (Anthropic), via Claude Code, em três prompts encadeados: identificação, análise e resposta. A IA descartou riscos que não se aplicavam ao projeto (cota de hospedagem, perda de progresso) e ajudou a criar gatilhos com data. O risco mais grave (R1) só apareceu quando o grupo conferiu o repositório real, e a IA não o identificou sozinha.</li>
+          <li><strong>Regras de uso:</strong> o Plano de Custos fixou regras para a IA: somente dados anonimizados, validação humana antes de decisões e a planilha como fonte da verdade.</li>
+          <li><strong>Site e atividade proposta:</strong> o site foi especificado com <em>specs</em> e <em>steering</em> para agentes de IA (pasta <code>.kiro</code> do repositório), e a atividade que o grupo propôs à turma ensinou a usar prompts e agentes para criar o PGQ e fazer code review.</li>
+          <li><strong>Este TAP v2:</strong> foi consolidado com apoio de IA a partir dos documentos do projeto, cruzando as versões para identificar divergências, e foi revisado e validado pelo grupo.</li>
+        </ul>
+
+        <h3>Experiências e aprendizados</h3>
+        <ul>
+          <li><strong>O plano precisa ser comparado com o produto.</strong> O TAP v1 classificava o atraso como risco baixo. Só a comparação com o repositório mostrou a situação real. Indicadores com data, como os gatilhos dos riscos, tornam o acompanhamento objetivo.</li>
+          <li><strong>Documentos divergem quando não há uma fonte única.</strong> Horas da equipe (15, 19 ou cerca de 50 h/semana), período do projeto e orçamento aparecem diferentes em cada plano. Atualizar o TAP a cada mudança, como o Plano de Comunicações já previa, teria evitado essas divergências.</li>
+          <li><strong>Mudanças tardias de arquitetura custam caro.</strong> A migração para a AWS entrou no plano a 2 dias do lançamento do MVP e mexeu com custo, aquisições, qualidade e riscos ao mesmo tempo.</li>
+          <li><strong>Escopo mínimo e ordem de corte protegem a entrega.</strong> Definir de antemão o que sai primeiro deixa as decisões sob pressão mais rápidas e menos conflituosas.</li>
+          <li><strong>A IA acelera o trabalho, mas não conhece o contexto.</strong> Ela gera bons rascunhos e estruturas, mas inventa ou omite fatos. O valor veio de dar contexto detalhado e revisar cada saída.</li>
+        </ul>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/entregas/tap">Ver o TAP v1</a>
+        <a class="btn btn-ghost" href="/entregas">Voltar para as entregas</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="brand-mark" aria-hidden="true">👽</span>
+      <p class="footer-quote">“Busquem conhecimento.”</p>
+      <p class="footer-meta">Projeto Bilu · Astronomia e astronáutica para a OBA</p>
+    </div>
+  </footer>
+
+  <!-- Opcional: reaproveita o céu estrelado da home (dois níveis) -->
+  <script src="../../script.js" defer></script>
+</body>
+</html>
